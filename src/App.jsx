@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Placeholder from './pages/Placeholder';
 import Manufacturing from './pages/Manufacturing';
+import AiSolutions from './pages/AiSolutions';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         {/* Products */}
         <Route path="/products/manufacturing" element={<Manufacturing />} />
         <Route path="/products/manufacturing/:productId" element={<Manufacturing />} />
+        {/* AI Solutions */}
+        <Route path="/products/ai" element={<AiSolutions />} />
+        <Route path="/products/ai/:productId" element={<AiSolutions />} />
+        
         <Route path="/products" element={<Placeholder title="Products" />} />
         <Route path="/products/:slug" element={<Placeholder title="Product Details" />} />
         

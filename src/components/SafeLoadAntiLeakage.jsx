@@ -64,9 +64,9 @@ const SafeLoadAntiLeakage = () => {
 
       {/* PART 1 — SafeLoad Use Cases */}
       <div className="container" data-aos="fade-up">
-        <div style={{ background: '#fff', borderRadius: '24px', padding: '50px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+        <div style={{ background: '#fff', borderRadius: '24px', padding: '40px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
 
-        <div className="row g-4 mb-5">
+        <div className="row g-4" style={{ marginBottom: '40px' }}>
           <div className="col-lg-4">
             <div className="safeload-card h-100" style={{ padding: '30px' }}>
               <div className="safeload-icon-circle mb-4">
@@ -103,7 +103,7 @@ const SafeLoadAntiLeakage = () => {
               <p style={{ color: '#cbd5e0', fontSize: '15px', margin: 0, lineHeight: '1.6' }}>Haul roads drive a significant share of mining operating costs and directly affect safe truck performance. Road monitoring and driving behavior control deliver both safety and productivity benefits.</p>
             </div>
             <div className="col-lg-4 text-start text-lg-end">
-              <span style={{ display: 'inline-block', background: 'rgba(192,0,26,0.2)', color: '#ff6b7a', fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', padding: '8px 16px', borderRadius: '30px', letterSpacing: '0.5px' }}>SAFELOAD • ANTI-LEAKAGE PLATFORM</span>
+              <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', padding: '8px 16px', borderRadius: '30px', letterSpacing: '0.5px' }}>SAFELOAD • ANTI-LEAKAGE PLATFORM</span>
             </div>
           </div>
         </div>

@@ -245,7 +245,7 @@ const Manufacturing = () => {
       </div>
 
       {/* Hero Slider */}
-      <section id="hero-slider" className="heroSwiper msl-bg-navy industrial-grid" style={{ paddingTop: '30px', paddingBottom: '60px' }}>
+      <section id="hero-slider" className="heroSwiper msl-bg-navy industrial-grid" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           loop={true}
@@ -353,10 +353,10 @@ const Manufacturing = () => {
       <main id="main" className="msl-bg-gray">
         
         {/* Section 1: Industrial IoT */}
-        <section id="iot" ref={iotRef} style={{ background: '#f8fafc', paddingBottom: '80px' }}>
+        <section id="iot" ref={iotRef} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
           
           {/* PRODUCT 01 UNIFIED HEADER */}
-          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '60px' }}>
+          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '40px' }}>
             <div className="container text-center position-relative" style={{ zIndex: 1 }}>
               <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px', marginBottom: '20px' }}>
                 Product 01
@@ -372,7 +372,7 @@ const Manufacturing = () => {
 
           {/* CONTENT CONTAINER */}
           <div className="container" data-aos="fade-up">
-            <div style={{ background: '#fff', borderRadius: '24px', padding: '50px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+            <div style={{ background: '#fff', borderRadius: '24px', padding: '40px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
 
           {/* BLOCK 2: MANUFACTURING OVERVIEW CARD */}
           <div>
@@ -436,7 +436,7 @@ const Manufacturing = () => {
             </div>
           </div>
 
-              <hr style={{ borderColor: '#e2e8f0', margin: '40px 0' }} />
+              <hr style={{ borderColor: '#e2e8f0', margin: '30px 0' }} />
 
               {/* BLOCK 3: IIoT SOLUTION ARCHITECTURE */}
               <div>
@@ -526,7 +526,7 @@ const Manufacturing = () => {
             </div>
           </div>
 
-              <hr style={{ borderColor: '#e2e8f0', margin: '40px 0' }} />
+              <hr style={{ borderColor: '#e2e8f0', margin: '30px 0' }} />
 
               {/* BLOCK 4: KEY BENEFITS + ONE PLATFORM STRIP */}
               <div>
@@ -608,10 +608,10 @@ const Manufacturing = () => {
         </section>
 
         {/* Section 2: Safety Mining */}
-        <section id="mining" ref={miningRef} style={{ background: '#f8fafc', paddingBottom: '80px' }}>
+        <section id="mining" ref={miningRef} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
           
           {/* PRODUCT 02 UNIFIED HEADER */}
-          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '60px' }}>
+          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '40px' }}>
             <div className="container text-center position-relative" style={{ zIndex: 1 }}>
               <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px', marginBottom: '20px' }}>
                 Product 02
@@ -629,71 +629,150 @@ const Manufacturing = () => {
         </section>
 
         {/* Section 3: Escalator/Lifts */}
-        <section id="lift" ref={liftRef} style={{ background: '#f8fafc', paddingBottom: '80px' }}>
+        <section id="lift" ref={liftRef} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
           
           {/* PRODUCT 03 UNIFIED HEADER */}
-          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '60px' }}>
+          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '40px' }}>
             <div className="container text-center position-relative" style={{ zIndex: 1 }}>
               <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px', marginBottom: '20px' }}>
                 Product 03
               </span>
               <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
-                Escalator & Lift Diagnostics
+                Multi Escalators & Lifts Failure Identification
               </h2>
-              <p style={{ color: '#cbd5e1', fontSize: '16px', maxWidth: '800px', margin: '0 auto' }}>
-                Complete hardware and cloud integration for real-time monitoring of escalator and lift health parameters.
+              <p style={{ color: '#cbd5e1', fontSize: '18px', maxWidth: '800px', margin: '0 auto', fontWeight: '300' }}>
+                <strong style={{color: '#fff', fontWeight: '600'}}>Never Miss a Fault. Never Stop Operations.</strong><br/>
+                Real-Time Escalator & Lift Failure Detection, Remotely Monitored.
               </p>
+              
+              {/* Badges removed and moved to cards */}
             </div>
           </div>
 
           <div className="container" data-aos="fade-up">
-            <div style={{ background: '#fff', borderRadius: '24px', padding: '50px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+            <div style={{ background: '#fff', borderRadius: '24px', padding: '40px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
 
-            <div className="row g-4 justify-content-center">
-              <div className="col-md-6 col-lg-3">
-                <div className="capability-card lift-card control-panel-card" style={{ padding: '30px', background: '#fff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                  <div className="status-indicator"></div>
-                  <div style={{ marginBottom: '20px' }}><i className="bx bx-microchip" style={{ fontSize: '32px', color: '#c0001a', background: '#1a2a4a', padding: '12px', borderRadius: '10px', boxShadow: '0 0 10px rgba(192,0,26,0.3)' }}></i></div>
-                  <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '15px' }}>HW @ Escalator</h5>
-                  <p className="msl-text-body" style={{ fontSize: '14px', lineHeight: '1.6', margin: 0 }}>Microcontroller-based hardware communicates with Escalator Control ports to identify and read all fault information locally.</p>
+              <div className="row g-5 align-items-center">
+                {/* Left Column - How It Works */}
+                <div className="col-lg-6">
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1a2a4a', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '25px' }}>
+                    <i className="bx bx-network-chart"></i> HOW IT WORKS
+                  </div>
+                  
+                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '30px' }}>
+                    From Detection to Resolution in Seconds
+                  </h3>
+                  
+                  <div style={{ position: 'relative', paddingLeft: '30px' }}>
+                    {/* Vertical Line */}
+                    <div style={{ position: 'absolute', left: '11px', top: '10px', bottom: '20px', width: '2px', background: 'linear-gradient(to bottom, #c0001a, rgba(192,0,26,0.1))' }}></div>
+                    
+                    {/* Step 1 */}
+                    <div style={{ position: 'relative', marginBottom: '30px' }}>
+                      <div style={{ position: 'absolute', left: '-30px', top: '0', width: '24px', height: '24px', borderRadius: '50%', background: '#c0001a', border: '4px solid #fff', boxShadow: '0 0 0 2px rgba(192,0,26,0.2)' }}></div>
+                      <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '8px' }}>1. Detect</h5>
+                      <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>
+                        Sensors at each escalator/lift unit continuously monitor for faults and feed data wirelessly to the IoT Cloud.
+                      </p>
+                    </div>
+                    
+                    {/* Step 2 */}
+                    <div style={{ position: 'relative', marginBottom: '30px' }}>
+                      <div style={{ position: 'absolute', left: '-30px', top: '0', width: '24px', height: '24px', borderRadius: '50%', background: '#c0001a', border: '4px solid #fff', boxShadow: '0 0 0 2px rgba(192,0,26,0.2)' }}></div>
+                      <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '8px' }}>2. Alert</h5>
+                      <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>
+                        Your control room hardware instantly displays which unit has faulted via LED indicators and triggers an alarm buzzer.
+                      </p>
+                    </div>
+                    
+                    {/* Step 3 */}
+                    <div style={{ position: 'relative' }}>
+                      <div style={{ position: 'absolute', left: '-30px', top: '0', width: '24px', height: '24px', borderRadius: '50%', background: '#c0001a', border: '4px solid #fff', boxShadow: '0 0 0 2px rgba(192,0,26,0.2)' }}></div>
+                      <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '8px' }}>3. Resolve</h5>
+                      <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>
+                        Maintenance team presses a single button to initiate rectification — and the system logs it, keeping records clean.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div style={{ marginTop: '40px', background: '#f8fafc', padding: '20px', borderRadius: '12px', border: '1px solid #e2e8f0' }}>
+                    <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '14px', marginBottom: '15px', textTransform: 'uppercase' }}>Trusted By Facilities:</h6>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                      {['Malls & Retail', 'Airports & Metros', 'Corporate Offices', 'Hospitals', 'Hotels'].map((facility, idx) => (
+                        <span key={idx} style={{ fontSize: '13px', color: '#4a5568', background: '#fff', padding: '5px 12px', borderRadius: '6px', border: '1px solid #cbd5e1' }}>
+                          {facility}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column - Key Benefits Grid */}
+                <div className="col-lg-6">
+                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '30px' }}>
+                    Key Benefits
+                  </h3>
+                  <div className="row g-4">
+                    <div className="col-sm-6">
+                      <div className="lift-card" style={{ background: '#fff', padding: '30px 25px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <i className="bx bx-down-arrow-circle" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
+                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Reduce Downtime</h5>
+                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Faults are flagged instantly, so repairs begin before passengers are affected.</p>
+                        <div style={{ marginTop: '20px' }}>
+                          <span style={{ background: 'rgba(192,0,26,0.1)', color: '#c0001a', padding: '6px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block' }}>
+                            <i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> IoT-Powered
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-6">
+                      <div className="lift-card" style={{ background: '#fff', padding: '30px 25px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <i className="bx bx-buildings" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
+                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Centralized Control</h5>
+                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Monitor every unit from a single control room, no manual floor checks needed.</p>
+                        <div style={{ marginTop: '20px' }}>
+                          <span style={{ background: 'rgba(192,0,26,0.1)', color: '#c0001a', padding: '6px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block' }}>
+                            <i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Wireless Architecture
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-6">
+                      <div className="lift-card" style={{ background: '#fff', padding: '30px 25px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <i className="bx bx-run" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
+                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Faster Response</h5>
+                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Service teams are dispatched with exact fault details already in hand.</p>
+                        <div style={{ marginTop: '20px' }}>
+                          <span style={{ background: 'rgba(192,0,26,0.1)', color: '#c0001a', padding: '6px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block' }}>
+                            <i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Real-Time Alerts
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-sm-6">
+                      <div className="lift-card" style={{ background: '#fff', padding: '30px 25px', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <i className="bx bx-shield-plus" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
+                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Improved Safety</h5>
+                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Automated alarms ensure no fault is silently missed during any shift.</p>
+                        <div style={{ marginTop: '20px' }}>
+                          <span style={{ background: 'rgba(192,0,26,0.1)', color: '#c0001a', padding: '6px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '700', display: 'inline-block' }}>
+                            <i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Multi-Unit Support
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div className="col-md-6 col-lg-3">
-                <div className="capability-card lift-card control-panel-card" style={{ padding: '30px', background: '#fff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                  <div className="status-indicator"></div>
-                  <div style={{ marginBottom: '20px' }}><i className="bx bx-cloud" style={{ fontSize: '32px', color: '#c0001a', background: '#1a2a4a', padding: '12px', borderRadius: '10px', boxShadow: '0 0 10px rgba(192,0,26,0.3)' }}></i></div>
-                  <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '15px' }}>IoT Cloud</h5>
-                  <p className="msl-text-body" style={{ fontSize: '14px', lineHeight: '1.6', margin: 0 }}>Acts as a remote data maintenance bridge to securely store continuous data between Hardware at Lift Controller & Control Room.</p>
-                </div>
-              </div>
-
-              <div className="col-md-6 col-lg-3">
-                <div className="capability-card lift-card control-panel-card" style={{ padding: '30px', background: '#fff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                  <div className="status-indicator"></div>
-                  <div style={{ marginBottom: '20px' }}><i className="bx bx-monitor" style={{ fontSize: '32px', color: '#c0001a', background: '#1a2a4a', padding: '12px', borderRadius: '10px', boxShadow: '0 0 10px rgba(192,0,26,0.3)' }}></i></div>
-                  <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '15px' }}>HW @ Control Room</h5>
-                  <p className="msl-text-body" style={{ fontSize: '14px', lineHeight: '1.6', margin: 0 }}>Continuously reads data from the Cloud and displays the exact fault information on LED displays, triggering alarms when needed.</p>
-                </div>
-              </div>
-
-              <div className="col-md-6 col-lg-3">
-                <div className="capability-card lift-card control-panel-card" style={{ padding: '30px', background: '#fff', borderRadius: '16px', border: '1px solid #e2e8f0', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
-                  <div className="status-indicator"></div>
-                  <div style={{ marginBottom: '20px' }}><i className="bx bx-bell" style={{ fontSize: '32px', color: '#c0001a', background: '#1a2a4a', padding: '12px', borderRadius: '10px', boxShadow: '0 0 10px rgba(192,0,26,0.3)' }}></i></div>
-                  <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '15px' }}>Alerts & Rectification</h5>
-                  <p className="msl-text-body" style={{ fontSize: '14px', lineHeight: '1.6', margin: 0 }}>Buzzer generates alert for RED LED status. Service initiation switch begins the fault rectification process (indicated by YELLOW LED).</p>
-                </div>
-              </div>
-            </div>
+              
             </div>
           </div>
         </section>
 
         {/* Dedicated CTA Section */}
-        <section id="contact" style={{ padding: '80px 0', background: '#ffffff' }}>
+        <section id="contact" style={{ padding: '60px 0', background: '#ffffff' }}>
           <div className="container" data-aos="fade-up">
-            <div style={{ background: '#1a2a4a', padding: '70px 40px', borderRadius: '24px', textAlign: 'center' }}>
+            <div style={{ background: '#1a2a4a', padding: '80px 40px', borderRadius: '24px', textAlign: 'center' }}>
               <h3 style={{ color: '#ffffff', fontSize: '36px', fontWeight: '800', marginBottom: '20px', textTransform: 'none' }}>Ready to Accelerate Your Manufacturing?</h3>
               <p style={{ color: '#cbd5e1', maxWidth: '650px', margin: '0 auto 40px', fontSize: '18px', lineHeight: '1.6' }}>
                 Implement intelligent automation, telematics, and predictive maintenance in your industrial environments today.
