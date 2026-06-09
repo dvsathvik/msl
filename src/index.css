@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.capability-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+}
+.capability-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+
+/* Premium Icon Circle Styles */
+.premium-icon-circle {
+  width: 45px;
+  height: 45px;
+  background: #F5F7FA;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.premium-icon-circle i {
+  font-size: 24px;
+  color: #162447;
+  transition: all 0.3s ease;
+}
+
+.capability-card:hover .premium-icon-circle {
+  background: rgba(226,49,63,0.1);
+}
+
+.capability-card:hover .premium-icon-circle i {
+  color: #E2313F;
+}
+
+.tech-icon-circle {
+  display: inline-flex;
+  width: 60px;
+  height: 60px;
+  background: #F5F7FA;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.tech-icon-circle i {
+  font-size: 32px;
+  color: #162447;
+  transition: all 0.3s ease;
+}
+
+.capability-card:hover .tech-icon-circle {
+  background: rgba(226,49,63,0.1);
+}
+
+.capability-card:hover .tech-icon-circle i {
+  color: #E2313F;
+}
