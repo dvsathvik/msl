@@ -42,7 +42,7 @@ const Manufacturing = () => {
           /* Strict overrides for this page to match brand guidelines */
           .msl-crimson { color: #c0001a !important; }
           .msl-navy { color: #1a2a4a !important; }
-          .msl-bg-navy { background-color: #1a2a4a !important; }
+          .msl-bg-navy { background-color: #1a2a4a; }
           .msl-bg-gray { background-color: #f5f6f8 !important; }
           .msl-text-body { color: #4a5568 !important; }
           
@@ -183,20 +183,6 @@ const Manufacturing = () => {
             position: relative;
             overflow: hidden;
           }
-          .caution-stripe::after {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0;
-            width: 150px;
-            background: repeating-linear-gradient(
-              45deg,
-              rgba(192, 0, 26, 0.1),
-              rgba(192, 0, 26, 0.1) 10px,
-              transparent 10px,
-              transparent 20px
-            );
-            pointer-events: none;
-          }
 
           /* Staggered Hero Animations */
           @keyframes fadeUpAnim {
@@ -234,7 +220,7 @@ const Manufacturing = () => {
       </style>
 
       {/* Breadcrumb */}
-      <div style={{ background: '#1a2a4a', paddingTop: '135px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ background: '#1a2a4a', paddingTop: '75px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container">
           <span style={{ color: '#a0aec0', fontSize: '13px', fontFamily: 'Inter, sans-serif' }}>
             <Link to="/" className="breadcrumb-link">Home</Link> <span style={{ margin: '0 8px' }}>&gt;</span> 

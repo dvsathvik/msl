@@ -41,20 +41,6 @@ const AiSolutions = () => {
             position: relative;
             overflow: hidden;
           }
-          .caution-stripe::after {
-            content: '';
-            position: absolute;
-            top: 0; right: 0; bottom: 0;
-            width: 150px;
-            background: repeating-linear-gradient(
-              45deg,
-              rgba(192, 0, 26, 0.1),
-              rgba(192, 0, 26, 0.1) 10px,
-              transparent 10px,
-              transparent 20px
-            );
-            pointer-events: none;
-          }
           
           /* Staggered Hero Animations */
           @keyframes fadeUpAnim {
@@ -72,6 +58,13 @@ const AiSolutions = () => {
           .msl-navy { color: #1a2a4a; }
           .msl-crimson { color: #c0001a; }
           .msl-text-body { color: #4a5568; }
+
+          /* Override gradients from global CSS */
+          .hero-text h1 span.msl-solid-highlight {
+            background: none !important;
+            -webkit-text-fill-color: initial !important;
+            color: #c0001a !important;
+          }
           
           .ai-feature-card {
             background: #fff;
@@ -110,7 +103,7 @@ const AiSolutions = () => {
       </style>
 
       {/* Breadcrumb */}
-      <div style={{ background: '#1a2a4a', paddingTop: '135px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ background: '#1a2a4a', paddingTop: '75px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
         <div className="container">
           <span style={{ color: '#a0aec0', fontSize: '13px', fontFamily: 'Inter, sans-serif' }}>
             <Link to="/" className="breadcrumb-link">Home</Link> <span style={{ margin: '0 8px' }}>&gt;</span> 
@@ -153,8 +146,8 @@ const AiSolutions = () => {
                   </div>
                 </div>
                 <div className="hero-image-col">
-                  <div className="hero-image-panel" style={{ background: '#0f172a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <i className="bx bx-cctv" style={{ fontSize: '120px', color: '#334155' }}></i>
+                  <div className="hero-image-panel" style={{ background: '#0f172a' }}>
+                    <img src="/assets/img/hero/AI-security-servillance.webp" alt="High Security Surveillance" style={{ opacity: 0.9 }} />
                   </div>
                 </div>
               </div>
@@ -180,8 +173,8 @@ const AiSolutions = () => {
                   </div>
                 </div>
                 <div className="hero-image-col">
-                  <div className="hero-image-panel" style={{ background: '#0f172a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <i className="bx bx-stopwatch" style={{ fontSize: '120px', color: '#334155' }}></i>
+                  <div className="hero-image-panel" style={{ background: '#0f172a' }}>
+                    <img src="/assets/img/hero/AI-traffic.webp" alt="High Traffic Signaling" style={{ opacity: 0.9 }} />
                   </div>
                 </div>
               </div>
@@ -207,8 +200,8 @@ const AiSolutions = () => {
                   </div>
                 </div>
                 <div className="hero-image-col">
-                  <div className="hero-image-panel" style={{ background: '#0f172a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <i className="bx bx-file-blank" style={{ fontSize: '120px', color: '#334155' }}></i>
+                  <div className="hero-image-panel" style={{ background: '#0f172a' }}>
+                    <img src="/assets/img/hero/ai-chip.webp" alt="Tender / Bidding Automation" style={{ opacity: 0.9 }} />
                   </div>
                 </div>
               </div>
