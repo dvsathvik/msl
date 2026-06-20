@@ -72,3 +72,33 @@ body {
 .capability-card:hover .tech-icon-circle i {
   color: #E2313F;
 }
+
+/* Global Product Wrapper */
+.msl-product-wrapper {
+  background: #ffffff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Global Feature Card */
+.msl-feature-card {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.msl-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  border-color: #c0001a;
+}
+

@@ -6,6 +6,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import t90SliderImg from '../assets/slider/defence/tanks.png';
+import g3000SliderImg from '../assets/slider/defence/cockpit.png';
+import lockerSliderImg from '../assets/slider/defence/smart_locker_defense.png';
+import streamingSliderImg from '../assets/slider/defence/secure_comm.png';
+
 const Defense = () => {
   const { productId } = useParams();
 
@@ -101,6 +106,14 @@ const Defense = () => {
           .breadcrumb-link:hover {
             color: #ffffff;
           }
+          .hover-scale:hover {
+            transform: scale(1.05);
+          }
+          .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: #FF4D4D !important;
+          }
         `}
       </style>
 
@@ -130,26 +143,36 @@ const Defense = () => {
           navigation={{ nextEl: '.hero-next', prevEl: '.hero-prev' }}
         >
           {/* Slide 1 - T90 */}
-          <SwiperSlide className="hero-slide slide-1">
-            <div className="container hero-content">
-              <div className="hero-grid">
-                <div className="hero-text">
-                  <span className="hero-tag" style={{ color: '#1a2a4a', border: '1px solid #e2e8f0', background: '#f8fafc' }}>DEFENSE • AUTOMATION</span>
-                  <h1 className="msl-navy">T90's Vehicles2Vehicles <br/><span className="msl-solid-highlight">RF Comm.</span></h1>
-                  <p className="msl-text-body">Secured Convoy Vehicles Comm. & Automation</p>
-                  <div className="hero-mini-features">
-                    <span>Wireless Tech</span>
-                    <span>RFID Based</span>
-                    <span>Qt Display</span>
-                    <span>Audio Comm</span>
-                  </div>
-                  <div className="hero-buttons">
-                    <a href="#t90" onClick={(e) => { e.preventDefault(); t90Ref.current?.scrollIntoView({ behavior: 'smooth' }); }} className="hero-btn primary-btn msl-btn-primary">Explore Solution</a>
-                  </div>
-                </div>
-                <div className="hero-image-col">
-                  <div className="hero-image-panel" style={{ background: '#0f172a' }}>
-                    <img src="/assets/img/hero/defense.webp" alt="T90 Communication" style={{ opacity: 0.9 }} />
+          <SwiperSlide>
+            <div className="slider-redesign">
+              <div className="slider-wrap">
+                <div className="stage">
+                  <div className="card">
+                    <div className="card-grid">
+                      <div className="text-col">
+                        <span className="tag">DEFENSE &bull; AUTOMATION</span>
+                        <h1>T90's Vehicles2Vehicles<br/><span>RF Comm.</span></h1>
+                        <p className="subtext">Secured Convoy Vehicles Comm. & Automation</p>
+                        <div className="cap-grid">
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-wifi"></i></span><span className="cap-label">Wireless Tech</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-rfid"></i></span><span className="cap-label">RFID Based</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-desktop"></i></span><span className="cap-label">Qt Display</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-headphone"></i></span><span className="cap-label">Audio Comm</span></div>
+                        </div>
+                        <div className="cta-row">
+                          <a href="#t90" onClick={(e) => { e.preventDefault(); t90Ref.current?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-primary">Explore Solution <i className="bx bx-right-arrow-alt"></i></a>
+                        </div>
+                      </div>
+                      <div className="image-col">
+                        <div className="image-panel">
+                          <img src={t90SliderImg} alt="T90 Communication" />
+                        </div>
+                        <div className="spec-chip">
+                          <div className="spec-label">Key Differentiator</div>
+                          <div className="spec-value">Secure Convoy Synchronization</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -157,26 +180,36 @@ const Defense = () => {
           </SwiperSlide>
 
           {/* Slide 2 - G3000 */}
-          <SwiperSlide className="hero-slide slide-2">
-            <div className="container hero-content">
-              <div className="hero-grid">
-                <div className="hero-text">
-                  <span className="hero-tag" style={{ color: '#1a2a4a', border: '1px solid #e2e8f0', background: '#f8fafc' }}>AEROSPACE • AVIONICS</span>
-                  <h1 className="msl-navy">G3000 Cockpit <br/><span className="msl-solid-highlight">Monitor Device</span></h1>
-                  <p className="msl-text-body">High Precision Monitoring for Modern Avionics</p>
-                  <div className="hero-mini-features">
-                    <span>Embedded Software</span>
-                    <span>Real-time OS</span>
-                    <span>Critical Systems</span>
-                    <span>Integration</span>
-                  </div>
-                  <div className="hero-buttons">
-                    <a href="#g3000" onClick={(e) => { e.preventDefault(); g3000Ref.current?.scrollIntoView({ behavior: 'smooth' }); }} className="hero-btn primary-btn msl-btn-primary">Explore Solution</a>
-                  </div>
-                </div>
-                <div className="hero-image-col">
-                  <div className="hero-image-panel" style={{ background: '#0f172a' }}>
-                    <img src="/assets/img/hero/defense1.webp" alt="G3000 Cockpit" style={{ opacity: 0.9 }} />
+          <SwiperSlide>
+            <div className="slider-redesign">
+              <div className="slider-wrap">
+                <div className="stage">
+                  <div className="card">
+                    <div className="card-grid">
+                      <div className="text-col">
+                        <span className="tag">AEROSPACE &bull; AVIONICS</span>
+                        <h1>G3000 Cockpit<br/><span>Monitor Device</span></h1>
+                        <p className="subtext">High Precision Monitoring for Modern Avionics</p>
+                        <div className="cap-grid">
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-chip"></i></span><span className="cap-label">Embedded SW</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-timer"></i></span><span className="cap-label">Real-time OS</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-shield-quarter"></i></span><span className="cap-label">Critical Sys</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-code-alt"></i></span><span className="cap-label">Integration</span></div>
+                        </div>
+                        <div className="cta-row">
+                          <a href="#g3000" onClick={(e) => { e.preventDefault(); g3000Ref.current?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-primary">Explore Solution <i className="bx bx-right-arrow-alt"></i></a>
+                        </div>
+                      </div>
+                      <div className="image-col">
+                        <div className="image-panel">
+                          <img src={g3000SliderImg} alt="G3000 Cockpit" />
+                        </div>
+                        <div className="spec-chip">
+                          <div className="spec-label">Key Differentiator</div>
+                          <div className="spec-value">DO-178C Compliant Systems</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -184,26 +217,36 @@ const Defense = () => {
           </SwiperSlide>
 
           {/* Slide 3 - AI Locker */}
-          <SwiperSlide className="hero-slide slide-3">
-            <div className="container hero-content">
-              <div className="hero-grid">
-                <div className="hero-text">
-                  <span className="hero-tag" style={{ color: '#1a2a4a', border: '1px solid #e2e8f0', background: '#f8fafc' }}>DEFENSE • SECURITY</span>
-                  <h1 className="msl-navy">SMART AI <br/><span className="msl-solid-highlight">Locker Systems</span></h1>
-                  <p className="msl-text-body">AI-driven secure storage for strategic defense facilities</p>
-                  <div className="hero-mini-features">
-                    <span>Facial Recognition</span>
-                    <span>Asset Tracking</span>
-                    <span>Alerts</span>
-                    <span>High Security</span>
-                  </div>
-                  <div className="hero-buttons">
-                    <a href="#locker" onClick={(e) => { e.preventDefault(); lockerRef.current?.scrollIntoView({ behavior: 'smooth' }); }} className="hero-btn primary-btn msl-btn-primary">Explore Solution</a>
-                  </div>
-                </div>
-                <div className="hero-image-col">
-                  <div className="hero-image-panel" style={{ background: '#0f172a' }}>
-                    <img src="/assets/img/hero/AI-locker.webp" alt="SMART AI Locker" style={{ opacity: 0.9 }} />
+          <SwiperSlide>
+            <div className="slider-redesign">
+              <div className="slider-wrap">
+                <div className="stage">
+                  <div className="card">
+                    <div className="card-grid">
+                      <div className="text-col">
+                        <span className="tag">DEFENSE &bull; SECURITY</span>
+                        <h1>SMART AI<br/><span>Locker Systems</span></h1>
+                        <p className="subtext">AI-driven secure storage for strategic defense facilities</p>
+                        <div className="cap-grid">
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-scan"></i></span><span className="cap-label">Face ID</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-box"></i></span><span className="cap-label">Asset Tracking</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-bell"></i></span><span className="cap-label">Alerts</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-lock-alt"></i></span><span className="cap-label">High Security</span></div>
+                        </div>
+                        <div className="cta-row">
+                          <a href="#locker" onClick={(e) => { e.preventDefault(); lockerRef.current?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-primary">Explore Solution <i className="bx bx-right-arrow-alt"></i></a>
+                        </div>
+                      </div>
+                      <div className="image-col">
+                        <div className="image-panel">
+                          <img src={lockerSliderImg} alt="SMART AI Locker" />
+                        </div>
+                        <div className="spec-chip">
+                          <div className="spec-label">Key Differentiator</div>
+                          <div className="spec-value">Unbreakable Biometric Access</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -211,32 +254,41 @@ const Defense = () => {
           </SwiperSlide>
 
           {/* Slide 4 - Video/Voice Streaming */}
-          <SwiperSlide className="hero-slide slide-4">
-            <div className="container hero-content">
-              <div className="hero-grid">
-                <div className="hero-text">
-                  <span className="hero-tag" style={{ color: '#1a2a4a', border: '1px solid #e2e8f0', background: '#f8fafc' }}>MILITARY • COMMUNICATIONS</span>
-                  <h1 className="msl-navy">High Secured Video <br/>& <span className="msl-solid-highlight">Voice Streaming</span></h1>
-                  <p className="msl-text-body">Encrypted media streaming for Mining & Military Operations</p>
-                  <div className="hero-mini-features">
-                    <span>End-to-End Encryption</span>
-                    <span>Low Latency</span>
-                    <span>Robust</span>
-                    <span>Cross-Platform</span>
-                  </div>
-                  <div className="hero-buttons">
-                    <a href="#video" onClick={(e) => { e.preventDefault(); videoRef.current?.scrollIntoView({ behavior: 'smooth' }); }} className="hero-btn primary-btn msl-btn-primary">Explore Solution</a>
-                  </div>
-                </div>
-                <div className="hero-image-col">
-                  <div className="hero-image-panel" style={{ background: '#0f172a' }}>
-                    <img src="/assets/img/hero/security.webp" alt="High Secured Streaming" style={{ opacity: 0.9 }} />
+          <SwiperSlide>
+            <div className="slider-redesign">
+              <div className="slider-wrap">
+                <div className="stage">
+                  <div className="card">
+                    <div className="card-grid">
+                      <div className="text-col">
+                        <span className="tag">MILITARY &bull; COMMUNICATIONS</span>
+                        <h1>High Secured Video <br/>& <span>Voice Streaming</span></h1>
+                        <p className="subtext">Encrypted media streaming for Mining & Military Operations</p>
+                        <div className="cap-grid">
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-lock"></i></span><span className="cap-label">Encryption</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-tachometer"></i></span><span className="cap-label">Low Latency</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-shield"></i></span><span className="cap-label">Robust</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-devices"></i></span><span className="cap-label">Cross-Platform</span></div>
+                        </div>
+                        <div className="cta-row">
+                          <a href="#video" onClick={(e) => { e.preventDefault(); videoRef.current?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-primary">Explore Solution <i className="bx bx-right-arrow-alt"></i></a>
+                        </div>
+                      </div>
+                      <div className="image-col">
+                        <div className="image-panel">
+                          <img src={streamingSliderImg} alt="High Secured Streaming" />
+                        </div>
+                        <div className="spec-chip">
+                          <div className="spec-label">Key Differentiator</div>
+                          <div className="spec-value">Military-Grade Stream Encryption</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </SwiperSlide>
-
           <div className="hero-controls-wrapper">
             <div className="hero-pagination" style={{ '--swiper-pagination-color': '#c0001a' }}></div>
             <div className="hero-navigation">
@@ -270,82 +322,179 @@ const Defense = () => {
           </div>
 
           <div className="container" data-aos="fade-up">
-            <div style={{ background: '#fff', borderRadius: '24px', padding: '40px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+            <div style={{ background: '#fff', borderRadius: '24px', padding: '0', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.04)', border: '1px solid #CBD5E1' }}>
               
-              <div className="row g-5 align-items-center">
-                
-                <div className="col-lg-6">
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1a2a4a', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '25px' }}>
-                    <i className="bx bx-broadcast"></i> COMMUNICATION
+              {/* Intro & Overview Block inside Card */}
+              <div style={{ background: '#0E1628', color: '#fff', padding: '50px 40px' }}>
+                <div className="row align-items-center g-5">
+                  <div className="col-lg-6">
+                    <span style={{ color: '#FF4D4D', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '12px', display: 'block', marginBottom: '15px' }}>
+                      <i className="bx bx-broadcast" style={{ marginRight: '5px' }}></i> Fleet Monitoring System
+                    </span>
+                    <h3 style={{ fontSize: '32px', fontWeight: '800', lineHeight: '1.2', marginBottom: '20px', color: '#fff' }}>
+                      Smart Tactical Vehicle Communication
+                    </h3>
+                    <p style={{ color: '#94A3B8', fontSize: '16px', lineHeight: '1.6', marginBottom: '20px' }}>
+                      An advanced battlefield communication and situational awareness platform for armored vehicles and military convoys. The solution enables secure, real-time communication while continuously monitoring operational parameters like ammunition, engine health, and fuel levels.
+                    </p>
+                    <div style={{ marginTop: '20px' }}>
+                      <h4 style={{ color: '#fff', fontSize: '22px', fontWeight: '800', marginBottom: '15px' }}>Operational Challenges</h4>
+                      <ul style={{ color: '#94A3B8', fontSize: '15px', lineHeight: '1.6', paddingLeft: '0', margin: 0, listStyleType: 'none' }}>
+                        <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'flex-start' }}><span style={{ color: '#FF4D4D', marginRight: '10px', fontSize: '20px', lineHeight: '1.2' }}>&bull;</span> <span><strong style={{ color: '#E2E8F0' }}>Manual Status Reporting:</strong> Continuous monitoring consumes operational time.</span></li>
+                        <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'flex-start' }}><span style={{ color: '#FF4D4D', marginRight: '10px', fontSize: '20px', lineHeight: '1.2' }}>&bull;</span> <span><strong style={{ color: '#E2E8F0' }}>Slow Decision Making:</strong> Outdated info due to transmission delays.</span></li>
+                        <li style={{ marginBottom: '10px', display: 'flex', alignItems: 'flex-start' }}><span style={{ color: '#FF4D4D', marginRight: '10px', fontSize: '20px', lineHeight: '1.2' }}>&bull;</span> <span><strong style={{ color: '#E2E8F0' }}>V2V Coordination:</strong> Voice methods increase communication overhead.</span></li>
+                        <li style={{ display: 'flex', alignItems: 'flex-start' }}><span style={{ color: '#FF4D4D', marginRight: '10px', fontSize: '20px', lineHeight: '1.2' }}>&bull;</span> <span><strong style={{ color: '#E2E8F0' }}>Limited Awareness:</strong> Lack of a complete operational picture.</span></li>
+                      </ul>
+                    </div>
                   </div>
-                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>
-                    Seamless and Secure Connectivity
-                  </h3>
-                  <p className="msl-text-body" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-                    Maintain flawless communication within military convoys. Our Vehicles2Vehicles system ensures that every T90 is continuously connected, transferring critical data and audio securely across moving assets.
-                  </p>
-                  
-                  <div style={{ background: '#fff', borderLeft: '4px solid #c0001a', padding: '20px', borderRadius: '0 8px 8px 0', boxShadow: '0 2px 15px rgba(0,0,0,0.03)', marginBottom: '30px' }}>
-                    <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>The Problem We Solve</h6>
-                    <ul style={{ paddingLeft: '20px', color: '#4a5568', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                      <li>Loss of communication during rapid movement of convoy vehicles</li>
-                      <li>Insecure data transfers prone to interception</li>
-                      <li>Lack of real-time situational awareness for drivers and commanders</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="col-lg-6">
-                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '30px' }}>
-                    What You Get
-                  </h3>
-                  <div className="row g-4">
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-radio-circle-marked" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Wireless RF Tech</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Highly resilient radio frequency communication bridging gaps between moving assets.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Reliable</span></div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-microchip" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>RFID Communication</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Automated vehicle identification and secure token exchange.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Secured</span></div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-desktop" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Qt Display Tracking</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Interactive graphical interface for operators to track vehicle status and formation.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> User Friendly</span></div>
-                      </div>
-                    </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-headphone" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Audio Communication</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Crystal clear, encrypted voice transmission over the vehicular network.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Real-Time</span></div>
-                      </div>
+                  <div className="col-lg-6">
+                    <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <img src="/assets/img/defense/def_t90.png" alt="Tactical Communication" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   </div>
                 </div>
-
               </div>
 
-              <hr style={{ borderColor: '#e2e8f0', margin: '30px 0' }} />
 
-              <div className="row align-items-center">
-                <div className="col-lg-8 mb-3 mb-lg-0">
-                  <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '14px', marginBottom: '10px', textTransform: 'uppercase' }}>Ideal For:</h6>
-                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0 }}>Armored vehicle convoys • Tactical field deployments • Supply chain protection units</p>
+              {/* Our Solution & Architecture */}
+              <div style={{ padding: '50px 40px', background: '#fff' }}>
+                <div className="row g-5 align-items-center">
+                  <div className="col-lg-5 order-2 order-lg-1">
+                    <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', background: '#f8fafc', border: '1px solid #e2e8f0' }}>
+                      <img src="/assets/img/defense/tankers.png" alt="Tank Network Architecture" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
+                    </div>
+                  </div>
+                  <div className="col-lg-7 order-1 order-lg-2">
+                    <span style={{ color: '#FF4D4D', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '12px', display: 'block', marginBottom: '10px' }}>Our Solution</span>
+                    <h4 style={{ color: '#1A2A4A', fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>A Synchronized Operational Picture</h4>
+                    <p style={{ color: '#4A5568', fontSize: '15px', lineHeight: '1.6', marginBottom: '30px' }}>
+                      Transforms conventional operations into an intelligent network. Each vehicle becomes an autonomous node, gathering sensor data and securely exchanging it via a distributed communication architecture.
+                    </p>
+                    
+                    <div className="row g-4">
+                      <div className="col-sm-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <i className="bx bx-chip" style={{ fontSize: '24px', color: '#FF4D4D' }}></i>
+                          <div>
+                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Vehicle Monitoring Unit</h6>
+                            <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Collects parameters like engine diagnostics, fuel, ammo, and GPS.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <i className="bx bx-lock-alt" style={{ fontSize: '24px', color: '#FF4D4D' }}></i>
+                          <div>
+                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Secure RF Network</h6>
+                            <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Dedicated protocol for V2V and V2C communication.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <i className="bx bx-server" style={{ fontSize: '24px', color: '#FF4D4D' }}></i>
+                          <div>
+                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Master Commander Station</h6>
+                            <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Operational control center providing fleet-wide visibility.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <i className="bx bx-network-chart" style={{ fontSize: '24px', color: '#FF4D4D' }}></i>
+                          <div>
+                            <h6 style={{ color: '#1A2A4A', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Mesh Communication</h6>
+                            <p style={{ color: '#64748B', fontSize: '13px', margin: 0 }}>Interconnected network eliminating single-point failures.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-lg-4 text-start text-lg-end">
-                  <a href="#contact" style={{ display: 'inline-block', background: '#c0001a', color: '#fff', padding: '12px 24px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}>Connect Your Fleet →</a>
+              </div>
+
+              {/* Features & Benefits from Image */}
+              <div style={{ padding: '50px 40px 25px', background: '#F8FAFC' }}>
+                <div className="row g-4">
+                  
+                  {/* SOLUTION FEATURES */}
+                  <div className="col-lg-7">
+                    <div style={{ background: '#fff', padding: '30px', borderRadius: '16px', border: '1px solid #e2e8f0', height: '100%' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+                        <div style={{ background: '#0E47A1', width: '40px', height: '40px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <i className="bx bx-cog" style={{ color: '#fff', fontSize: '24px' }}></i>
+                        </div>
+                        <h4 style={{ color: '#0E47A1', fontSize: '18px', fontWeight: '800', margin: 0, textTransform: 'uppercase', letterSpacing: '1px' }}>Solution Features</h4>
+                      </div>
+                      
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '15px', textAlign: 'center' }}>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <i className="bx bx-broadcast" style={{ fontSize: '36px', color: '#0E47A1', marginBottom: '10px' }}></i>
+                          <p style={{ fontSize: '11px', color: '#1A2A4A', fontWeight: '600', lineHeight: '1.4' }}>Automated wireless communication between vehicles</p>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <i className="bx bx-link" style={{ fontSize: '36px', color: '#0E47A1', marginBottom: '10px' }}></i>
+                          <p style={{ fontSize: '11px', color: '#1A2A4A', fontWeight: '600', lineHeight: '1.4' }}>Vehicle-to-vehicle connectivity without internet</p>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <i className="bx bx-radar" style={{ fontSize: '36px', color: '#0E47A1', marginBottom: '10px' }}></i>
+                          <p style={{ fontSize: '11px', color: '#1A2A4A', fontWeight: '600', lineHeight: '1.4' }}>LiDAR-based speed and distance estimation for accidental protection</p>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <i className="bx bx-shield-quarter" style={{ fontSize: '36px', color: '#0E47A1', marginBottom: '10px' }}></i>
+                          <p style={{ fontSize: '11px', color: '#1A2A4A', fontWeight: '600', lineHeight: '1.4' }}>Secure packetized data transmission</p>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                          <i className="bx bx-camera" style={{ fontSize: '36px', color: '#0E47A1', marginBottom: '10px' }}></i>
+                          <p style={{ fontSize: '11px', color: '#1A2A4A', fontWeight: '600', lineHeight: '1.4' }}>Camera-assisted automatic collision avoidance (upcoming feature)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* KEY BENEFITS */}
+                  <div className="col-lg-5">
+                    <div style={{ background: '#fff', padding: '30px', borderRadius: '16px', border: '1px solid #e2e8f0', height: '100%' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px', justifyContent: 'center' }}>
+                        <div style={{ height: '2px', background: '#e2e8f0', flex: 1 }}></div>
+                        <h4 style={{ color: '#0E47A1', fontSize: '18px', fontWeight: '800', margin: 0, textTransform: 'uppercase', letterSpacing: '1px' }}>Key Benefits</h4>
+                        <div style={{ height: '2px', background: '#e2e8f0', flex: 1 }}></div>
+                      </div>
+                      
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: '#fff', padding: '12px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
+                          <i className="bx bx-tachometer" style={{ fontSize: '28px', color: '#0E47A1' }}></i>
+                          <span style={{ fontSize: '13px', color: '#1A2A4A', fontWeight: '700', lineHeight: '1.2' }}>Faster<br/>Decisions</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: '#fff', padding: '12px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
+                          <i className="bx bx-file-blank" style={{ fontSize: '28px', color: '#0E47A1' }}></i>
+                          <span style={{ fontSize: '13px', color: '#1A2A4A', fontWeight: '700', lineHeight: '1.2' }}>Reduced<br/>Manual Reporting</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: '#fff', padding: '12px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
+                          <i className="bx bx-check-shield" style={{ fontSize: '28px', color: '#0E47A1' }}></i>
+                          <span style={{ fontSize: '13px', color: '#1A2A4A', fontWeight: '700', lineHeight: '1.2' }}>Improved<br/>Safety</span>
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', background: '#fff', padding: '12px', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
+                          <i className="bx bx-refresh" style={{ fontSize: '28px', color: '#0E47A1' }}></i>
+                          <span style={{ fontSize: '13px', color: '#1A2A4A', fontWeight: '700', lineHeight: '1.2' }}>Mission<br/>Continuity</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Bottom CTA within card */}
+              <div style={{ background: '#F8FAFC', padding: '25px 40px 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ marginBottom: '15px', flex: '1 1 300px' }}>
+                  <h6 style={{ color: '#FF4D4D', fontWeight: '700', fontSize: '14px', marginBottom: '8px', textTransform: 'uppercase' }}>Target Applications:</h6>
+                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0, fontWeight: '500' }}>Military Convoys • Border Security • Disaster Response • Armored Fleets</p>
+                </div>
+                <div style={{ flex: '0 0 auto' }}>
+                  <a href="#contact" style={{ display: 'inline-block', background: '#FF4D4D', color: '#fff', padding: '18px 40px', borderRadius: '12px', fontWeight: '800', textDecoration: 'none', fontSize: '18px', boxShadow: '0 10px 25px rgba(255, 77, 77, 0.5)', textTransform: 'uppercase', letterSpacing: '1px' }} className="hover-scale">
+                    Talk to Our Defense Experts <i className="bx bx-right-arrow-alt" style={{ verticalAlign: 'middle', fontSize: '24px' }}></i>
+                  </a>
                 </div>
               </div>
 
@@ -374,85 +523,153 @@ const Defense = () => {
           </div>
 
           <div className="container" data-aos="fade-up">
-            <div style={{ background: '#fff', borderRadius: '24px', padding: '40px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+            <div style={{ background: '#fff', borderRadius: '24px', padding: '0', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.04)', border: '1px solid #CBD5E1' }}>
               
-              <div className="row g-5 align-items-center">
-                
-                <div className="col-lg-6">
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1a2a4a', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '25px' }}>
-                    <i className="bx bx-paper-plane"></i> AVIONICS
+              <div style={{ padding: '50px 40px' }}>
+                {/* Row 1: Intro & Overview with G3000 Cockpit Image */}
+                <div className="row g-5 align-items-center mb-5">
+                  <div className="col-lg-6">
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1a2a4a', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '20px' }}>
+                      <i className="bx bx-paper-plane"></i> AVIONICS
+                    </div>
+                    {/* Dark theme red heading */}
+                    <h3 style={{ color: '#C0001A', fontSize: '34px', fontWeight: '800', marginBottom: '20px', lineHeight: '1.2' }}>
+                      At 30,000 Feet, There Is Zero Room For Error.
+                    </h3>
+                    <p style={{ fontSize: '15px', lineHeight: '1.7', marginBottom: '30px', color: '#4a5568' }}>
+                      The <strong>G3000 Cockpit Monitor</strong> processes thousands of data points instantly. It acts as the central visualization platform, providing pilots with critical, real-time flight metrics and aircraft health data to ensure absolute situational awareness.
+                    </p>
+
+                    {/* Subtle Challenges Section */}
+                    <div style={{ background: '#f8fafc', padding: '25px', borderRadius: '16px', borderLeft: '4px solid #C0001A', border: '1px solid #e2e8f0' }}>
+                      <h6 style={{ color: '#1e293b', fontWeight: '700', fontSize: '14px', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>Legacy System Bottlenecks We Solve</h6>
+                      <ul style={{ paddingLeft: '20px', color: '#64748b', fontSize: '14px', lineHeight: '1.7', margin: 0 }}>
+                        <li style={{ marginBottom: '8px' }}>Aging hardware struggling with modern workloads.</li>
+                        <li style={{ marginBottom: '8px' }}>Software architectures that are difficult to upgrade.</li>
+                        <li>Complex ARINC 429 sensor integration causing latency.</li>
+                      </ul>
+                    </div>
                   </div>
-                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>
-                    Safety-Critical Aerospace Displays
-                  </h3>
-                  <p className="msl-text-body" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-                    When lives are on the line at 30,000 feet, there is zero room for error. The G3000 Cockpit Monitor provides pilots with vital flight metrics, driven by our highly optimized Real-Time Operating System and redundant hardware architecture.
-                  </p>
-                  
-                  <div style={{ background: '#fff', borderLeft: '4px solid #c0001a', padding: '20px', borderRadius: '0 8px 8px 0', boxShadow: '0 2px 15px rgba(0,0,0,0.03)', marginBottom: '30px' }}>
-                    <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>The Problem We Solve</h6>
-                    <ul style={{ paddingLeft: '20px', color: '#4a5568', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                      <li>Latency in displaying crucial sensor data</li>
-                      <li>System failure in extreme environmental conditions</li>
-                      <li>Complex user interfaces that cause cognitive overload during emergencies</li>
-                    </ul>
+
+                  <div className="col-lg-6">
+                    {/* G3000 Cockpit Image */}
+                    <div style={{ position: 'relative' }}>
+                      <img src="/assets/img/defense/g3000_cockpit.png" alt="G3000 Monitor" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', border: '1px solid #e2e8f0' }} />
+                    </div>
                   </div>
                 </div>
 
-                <div className="col-lg-6">
-                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '30px' }}>
-                    What You Get
-                  </h3>
-                  <div className="row g-4">
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-code-block" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>RTOS Integration</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Running on deterministic Real-Time Operating Systems for guaranteed execution times.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Zero Latency</span></div>
+                <div className="row g-5">
+                  <div className="col-lg-12">
+                    {/* Major Changes section */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '25px', background: '#fff', padding: '35px 40px', borderRadius: '20px', border: '1px solid #e2e8f0', marginBottom: '40px', boxShadow: '0 4px 15px rgba(0,0,0,0.02)' }}>
+                      <div style={{ background: '#0e47a1', width: '70px', height: '70px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 10px 20px rgba(14,71,161,0.15)' }}>
+                        <i className="bx bx-clipboard" style={{ color: '#fff', fontSize: '34px' }}></i>
+                      </div>
+                      <div style={{ flexGrow: 1 }}>
+                        <h4 style={{ color: '#0e47a1', fontSize: '24px', fontWeight: '800', marginBottom: '15px' }}>Major Changes</h4>
+                        <ul style={{ paddingLeft: '20px', color: '#334155', fontSize: '15px', lineHeight: '1.6', margin: 0, fontWeight: '500', display: 'grid', gridTemplateColumns: '1fr 1fr', columnGap: '30px' }}>
+                          <li style={{ marginBottom: '10px' }}>Analyzed the overall software flow</li>
+                          <li style={{ marginBottom: '10px' }}>Ported TMS320 and TMS340 solutions to TI OMAP chipset</li>
+                          <li style={{ marginBottom: '10px' }}>Added a new operating system</li>
+                          <li style={{ marginBottom: '10px' }}>Performed feature validation, including vertical speed</li>
+                          <li style={{ marginBottom: '10px' }}>Conducted performance analysis</li>
+                        </ul>
                       </div>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-layer" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>BSP & Drivers</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Custom Board Support Packages ensuring seamless hardware-software handshake.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Robust</span></div>
+                  </div>
+                </div>
+
+                {/* Alternating Dark Section: Engineering Highlights */}
+                <div style={{ background: '#0f172a', borderRadius: '16px', display: 'flex', alignItems: 'stretch', overflow: 'hidden', marginBottom: '50px', boxShadow: '0 10px 30px rgba(15,23,42,0.15)' }}>
+                  <div style={{ background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)', padding: '20px 30px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+                    <span style={{ color: '#fff', fontWeight: '800', fontSize: '16px', textAlign: 'center', lineHeight: '1.3', letterSpacing: '1px', textTransform: 'uppercase' }}>Engineering<br/>Highlights</span>
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', flexGrow: 1 }}>
+                    <div style={{ flex: '1 1 0', display: 'flex', alignItems: 'center', gap: '15px', padding: '20px 25px', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid rgba(96,165,250,0.3)', background: 'rgba(96,165,250,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <i className="bx bx-share-alt" style={{ fontSize: '24px', color: '#60A5FA' }}></i>
                       </div>
+                      <span style={{ color: '#fff', fontWeight: '600', fontSize: '14px', lineHeight: '1.3' }}>ARINC429<br/>Interfacing</span>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-test-tube" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Rigorous Testing</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Automated software testing pipelines to meet DO-178C avionics standards.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Certified</span></div>
+                    <div style={{ flex: '1 1 0', display: 'flex', alignItems: 'center', gap: '15px', padding: '20px 25px', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid rgba(167,139,250,0.3)', background: 'rgba(167,139,250,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <i className="bx bx-microchip" style={{ fontSize: '24px', color: '#A78BFA' }}></i>
                       </div>
+                      <span style={{ color: '#fff', fontWeight: '600', fontSize: '14px', lineHeight: '1.3' }}>Software<br/>Porting</span>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-tachometer" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Clear Interface</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>High-visibility displays designed for instant data comprehension by pilots.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Ergonomic</span></div>
+                    <div style={{ flex: '1 1 0', display: 'flex', alignItems: 'center', gap: '15px', padding: '20px 25px', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid rgba(52,211,153,0.3)', background: 'rgba(52,211,153,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <i className="bx bx-check-shield" style={{ fontSize: '24px', color: '#34D399' }}></i>
                       </div>
+                      <span style={{ color: '#fff', fontWeight: '600', fontSize: '14px', lineHeight: '1.3' }}>Feature<br/>Validation</span>
+                    </div>
+                    <div style={{ flex: '1 1 0', display: 'flex', alignItems: 'center', gap: '15px', padding: '20px 25px' }}>
+                      <div style={{ width: '48px', height: '48px', borderRadius: '50%', border: '2px solid rgba(251,191,36,0.3)', background: 'rgba(251,191,36,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <i className="bx bx-trending-up" style={{ fontSize: '24px', color: '#FBBF24' }}></i>
+                      </div>
+                      <span style={{ color: '#fff', fontWeight: '600', fontSize: '14px', lineHeight: '1.3' }}>Performance<br/>Optimization</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Key Benefits */}
+                <div className="row g-4 mt-2">
+                  <div className="col-12">
+                    <h4 style={{ color: '#1e293b', fontSize: '22px', fontWeight: '800', marginBottom: '20px', textAlign: 'center' }}>Key Benefits for Your Fleet</h4>
+                  </div>
+                  <div className="col-md-3">
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ width: '64px', height: '64px', background: '#fee2e2', borderRadius: '50%', border: '1px solid #fecaca', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+                        <i className="bx bx-target-lock" style={{ fontSize: '32px', color: '#C0001A' }}></i>
+                      </div>
+                      <h6 style={{ color: '#1e293b', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Unmatched Precision</h6>
+                      <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Real-time visualization eliminates interpretation delays.</p>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ width: '64px', height: '64px', background: '#fee2e2', borderRadius: '50%', border: '1px solid #fecaca', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+                        <i className="bx bx-history" style={{ fontSize: '32px', color: '#C0001A' }}></i>
+                      </div>
+                      <h6 style={{ color: '#1e293b', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Extended Lifecycle</h6>
+                      <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Modern hardware migration prevents costly overhauls.</p>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ width: '64px', height: '64px', background: '#fee2e2', borderRadius: '50%', border: '1px solid #fecaca', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+                        <i className="bx bx-shield-quarter" style={{ fontSize: '32px', color: '#C0001A' }}></i>
+                      </div>
+                      <h6 style={{ color: '#1e293b', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Absolute Reliability</h6>
+                      <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Rigorous DO-178C avionics standards compliance.</p>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ width: '64px', height: '64px', background: '#fee2e2', borderRadius: '50%', border: '1px solid #fecaca', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+                        <i className="bx bx-plug" style={{ fontSize: '32px', color: '#C0001A' }}></i>
+                      </div>
+                      <h6 style={{ color: '#1e293b', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Seamless Integration</h6>
+                      <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Plug-and-play compatibility with ARINC 429 systems.</p>
                     </div>
                   </div>
                 </div>
 
               </div>
 
-              <hr style={{ borderColor: '#e2e8f0', margin: '30px 0' }} />
-
-              <div className="row align-items-center">
-                <div className="col-lg-8 mb-3 mb-lg-0">
-                  <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '14px', marginBottom: '10px', textTransform: 'uppercase' }}>Ideal For:</h6>
-                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0 }}>Military aircraft manufacturers • Commercial aviation modernization • Defense aerospace contractors</p>
+              {/* Bottom CTA */}
+              <div style={{ background: '#f1f5f9', padding: '30px 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ marginBottom: '15px', flex: '1 1 300px' }}>
+                  <h6 style={{ color: '#C0001A', fontWeight: '800', fontSize: '18px', marginBottom: '5px' }}>Ready to bring your cockpit into the 21st century?</h6>
+                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0, fontWeight: '500' }}>Stop risking your missions on outdated hardware. Let's modernize your fleet today.</p>
                 </div>
-                <div className="col-lg-4 text-start text-lg-end">
-                  <a href="#contact" style={{ display: 'inline-block', background: '#c0001a', color: '#fff', padding: '12px 24px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}>Upgrade Avionics →</a>
+                <div style={{ flex: '0 0 auto' }}>
+                  <a href="#contact" style={{ display: 'inline-block', background: '#C0001A', color: '#fff', padding: '12px 28px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '15px', textTransform: 'uppercase', boxShadow: '0 4px 15px rgba(192,0,26,0.3)' }} className="hover-scale">
+                    Upgrade Avionics <i className="bx bx-right-arrow-alt" style={{ verticalAlign: 'middle', fontSize: '20px' }}></i>
+                  </a>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -478,82 +695,242 @@ const Defense = () => {
           </div>
 
           <div className="container" data-aos="fade-up">
-            <div style={{ background: '#fff', borderRadius: '24px', padding: '40px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+            <div style={{ background: '#fff', borderRadius: '24px', padding: '0', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.04)', border: '1px solid #CBD5E1' }}>
               
-              <div className="row g-5 align-items-center">
-                
-                <div className="col-lg-6">
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1a2a4a', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '25px' }}>
+              {/* Row 1: Vertical Image & Intro/Challenges */}
+              <div className="row g-0">
+                <div className="col-lg-7" style={{ padding: '50px 40px' }}>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1a2a4a', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '20px' }}>
                     <i className="bx bx-shield-quarter"></i> SECURITY
                   </div>
-                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>
-                    Safeguarding Critical Assets
-                  </h3>
-                  <p className="msl-text-body" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-                    Defense installations require absolute accountability for weapons, documents, and sensitive materials. Our SMART AI Locker System replaces traditional physical keys with advanced biometric authentication and real-time inventory tracking.
-                  </p>
                   
-                  <div style={{ background: '#fff', borderLeft: '4px solid #c0001a', padding: '20px', borderRadius: '0 8px 8px 0', boxShadow: '0 2px 15px rgba(0,0,0,0.03)', marginBottom: '30px' }}>
-                    <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>The Problem We Solve</h6>
-                    <ul style={{ paddingLeft: '20px', color: '#4a5568', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                      <li>Misplacement or theft of critical weapons and gear</li>
-                      <li>Lack of audit trails for who accessed which locker and when</li>
-                      <li>Time-consuming manual sign-out processes</li>
+                  {/* Cheesy Line */}
+                  <h3 style={{ color: '#C0001A', fontSize: '36px', fontWeight: '800', marginBottom: '20px', lineHeight: '1.2' }}>
+                    Lock Down the Unthinkable. Because Physical Keys Are For Amateurs.
+                  </h3>
+                  
+                  {/* Introduction */}
+                  <p style={{ fontSize: '15px', lineHeight: '1.7', marginBottom: '30px', color: '#4a5568' }}>
+                    The <strong>Smart AI Locker System</strong> modernizes secure storage by combining Artificial Intelligence, Facial Recognition, and Multi-Level Approval Workflows into a single platform. We eliminate manual registers and physical keys, ensuring that your classified documents, laptops, and mission-critical assets are only accessible to authorized personnel.
+                  </p>
+
+                  {/* Challenges */}
+                  <div style={{ background: '#f8fafc', padding: '25px', borderRadius: '16px', borderLeft: '4px solid #C0001A', border: '1px solid #e2e8f0' }}>
+                    <h6 style={{ color: '#1e293b', fontWeight: '700', fontSize: '15px', marginBottom: '15px', textTransform: 'uppercase', letterSpacing: '1px' }}>Current World Threat Vectors We Neutralize</h6>
+                    <ul style={{ paddingLeft: '20px', color: '#64748b', fontSize: '14px', lineHeight: '1.7', margin: 0 }}>
+                      <li style={{ marginBottom: '8px' }}><strong>Insider Threats:</strong> Unauthorized internal access to sensitive military documents.</li>
+                      <li style={{ marginBottom: '8px' }}><strong>Traceability Blackholes:</strong> No centralized monitoring of who deposited or retrieved an item.</li>
+                      <li><strong>Procedural Bypass:</strong> Inability to enforce strict multi-officer approval workflows.</li>
                     </ul>
                   </div>
                 </div>
 
-                <div className="col-lg-6">
-                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '30px' }}>
-                    What You Get
-                  </h3>
-                  <div className="row g-4">
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-face" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Facial Recognition</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Instant, spoof-proof AI facial authentication for authorized personnel.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Edge AI</span></div>
+                <div className="col-lg-5" style={{ background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px' }}>
+                  {/* Vertical Image */}
+                  <img src="/assets/img/defense/smart_locker.png" alt="Smart AI Locker" style={{ width: '100%', maxWidth: '350px', height: 'auto', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', border: '1px solid rgba(0,0,0,0.05)' }} />
+                </div>
+              </div>
+
+              {/* Row 2: Multi-Level Approval Workflow (Alternating Section) */}
+              <div style={{ background: '#1a2a4a', padding: '50px 40px' }}>
+                <div className="text-center mb-5">
+                  <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: '800', marginBottom: '10px' }}>Multi-Level Approval Workflow</h4>
+                  <p style={{ color: '#cbd5e1', fontSize: '15px', margin: 0 }}>Assets remain locked until all operational command authorities approve.</p>
+                </div>
+                <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto' }}>
+                  
+                  {/* Top Row (4 Items) */}
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '40px' }}>
+                    {/* Item 1 */}
+                    <div style={{ width: '160px', textAlign: 'center', marginBottom: '20px' }}>
+                      <div style={{ width: '75px', height: '75px', borderRadius: '50%', background: '#1a2a4a', border: '2px solid #60A5FA', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px' }}>
+                        <i className="bx bx-scan" style={{ fontSize: '34px', color: '#60A5FA' }}></i>
                       </div>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '14.5px', lineHeight: '1.4' }}>User<br/>Authentication</h6>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-list-check" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Audit Trails</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Immutable logs of every access attempt, success, and duration.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Accountable</span></div>
+                    
+                    {/* Dotted Arrow 1 */}
+                    <div className="d-none d-lg-flex" style={{ flex: '1', minWidth: '40px', maxWidth: '80px', alignItems: 'center', marginTop: '37px', position: 'relative' }}>
+                      <div style={{ width: '100%', borderTop: '2px dashed rgba(255,255,255,0.3)' }}></div>
+                      <i className="bx bx-chevron-right" style={{ position: 'absolute', right: '-8px', color: 'rgba(255,255,255,0.5)', fontSize: '24px' }}></i>
+                    </div>
+
+                    {/* Item 2 */}
+                    <div style={{ width: '160px', textAlign: 'center', marginBottom: '20px' }}>
+                      <div style={{ width: '75px', height: '75px', borderRadius: '50%', background: '#1a2a4a', border: '2px solid #A78BFA', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px' }}>
+                        <i className="bx bx-file-find" style={{ fontSize: '34px', color: '#A78BFA' }}></i>
                       </div>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '14.5px', lineHeight: '1.4' }}>Access<br/>Request</h6>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-box" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Asset Tracking</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Internal sensors detect exactly which item was removed and when it was returned.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Smart Inventory</span></div>
+
+                    {/* Dotted Arrow 2 */}
+                    <div className="d-none d-lg-flex" style={{ flex: '1', minWidth: '40px', maxWidth: '80px', alignItems: 'center', marginTop: '37px', position: 'relative' }}>
+                      <div style={{ width: '100%', borderTop: '2px dashed rgba(255,255,255,0.3)' }}></div>
+                      <i className="bx bx-chevron-right" style={{ position: 'absolute', right: '-8px', color: 'rgba(255,255,255,0.5)', fontSize: '24px' }}></i>
+                    </div>
+
+                    {/* Item 3 */}
+                    <div style={{ width: '160px', textAlign: 'center', marginBottom: '20px' }}>
+                      <div style={{ width: '75px', height: '75px', borderRadius: '50%', background: '#1a2a4a', border: '2px solid #34D399', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px' }}>
+                        <i className="bx bx-user-check" style={{ fontSize: '34px', color: '#34D399' }}></i>
                       </div>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '14.5px', lineHeight: '1.4' }}>Level One<br/>Approval</h6>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-error-alt" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Instant Alerts</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Command center notification for unauthorized attempts or unreturned items.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Real-Time</span></div>
+
+                    {/* Dotted Arrow 3 */}
+                    <div className="d-none d-lg-flex" style={{ flex: '1', minWidth: '40px', maxWidth: '80px', alignItems: 'center', marginTop: '37px', position: 'relative' }}>
+                      <div style={{ width: '100%', borderTop: '2px dashed rgba(255,255,255,0.3)' }}></div>
+                      <i className="bx bx-chevron-right" style={{ position: 'absolute', right: '-8px', color: 'rgba(255,255,255,0.5)', fontSize: '24px' }}></i>
+                    </div>
+
+                    {/* Item 4 */}
+                    <div style={{ width: '160px', textAlign: 'center', marginBottom: '20px' }}>
+                      <div style={{ width: '75px', height: '75px', borderRadius: '50%', background: '#1a2a4a', border: '2px solid #FBBF24', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px' }}>
+                        <i className="bx bx-check-shield" style={{ fontSize: '34px', color: '#FBBF24' }}></i>
+                      </div>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '14.5px', lineHeight: '1.4' }}>Level Two<br/>Approval</h6>
+                    </div>
+                  </div>
+
+                  {/* Bottom Row (3 Items) */}
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+                    {/* Item 5 */}
+                    <div style={{ width: '160px', textAlign: 'center', marginBottom: '20px' }}>
+                      <div style={{ width: '75px', height: '75px', borderRadius: '50%', background: '#1a2a4a', border: '2px solid #F472B6', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px' }}>
+                        <i className="bx bx-cog" style={{ fontSize: '34px', color: '#F472B6' }}></i>
+                      </div>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '14.5px', lineHeight: '1.4' }}>System<br/>Verification</h6>
+                    </div>
+                    
+                    {/* Dotted Arrow 4 */}
+                    <div className="d-none d-lg-flex" style={{ flex: '1', minWidth: '40px', maxWidth: '80px', alignItems: 'center', marginTop: '37px', position: 'relative' }}>
+                      <div style={{ width: '100%', borderTop: '2px dashed rgba(255,255,255,0.3)' }}></div>
+                      <i className="bx bx-chevron-right" style={{ position: 'absolute', right: '-8px', color: 'rgba(255,255,255,0.5)', fontSize: '24px' }}></i>
+                    </div>
+
+                    {/* Item 6 */}
+                    <div style={{ width: '160px', textAlign: 'center', marginBottom: '20px' }}>
+                      <div style={{ width: '75px', height: '75px', borderRadius: '50%', background: '#1a2a4a', border: '2px solid #38BDF8', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px' }}>
+                        <i className="bx bx-lock-open-alt" style={{ fontSize: '34px', color: '#38BDF8' }}></i>
+                      </div>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '14.5px', lineHeight: '1.4' }}>Locker<br/>Unlock</h6>
+                    </div>
+
+                    {/* Dotted Arrow 5 */}
+                    <div className="d-none d-lg-flex" style={{ flex: '1', minWidth: '40px', maxWidth: '80px', alignItems: 'center', marginTop: '37px', position: 'relative' }}>
+                      <div style={{ width: '100%', borderTop: '2px dashed rgba(255,255,255,0.3)' }}></div>
+                      <i className="bx bx-chevron-right" style={{ position: 'absolute', right: '-8px', color: 'rgba(255,255,255,0.5)', fontSize: '24px' }}></i>
+                    </div>
+
+                    {/* Item 7 */}
+                    <div style={{ width: '160px', textAlign: 'center', marginBottom: '20px' }}>
+                      <div style={{ width: '75px', height: '75px', borderRadius: '50%', background: '#1a2a4a', border: '2px solid #E879F9', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px' }}>
+                        <i className="bx bx-list-check" style={{ fontSize: '34px', color: '#E879F9' }}></i>
+                      </div>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '14.5px', lineHeight: '1.4' }}>Audit<br/>Logging</h6>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+
+              {/* Row 3: Key Features & Ideal For */}
+              <div style={{ padding: '50px 40px' }}>
+                <div className="row g-5">
+                  <div className="col-lg-8">
+                    <h4 style={{ color: '#1a2a4a', fontSize: '22px', fontWeight: '800', marginBottom: '25px' }}>Key Features</h4>
+                    <div className="row g-4">
+                      <div className="col-md-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <i className="bx bx-face" style={{ fontSize: '26px', color: '#C0001A' }}></i>
+                          </div>
+                          <div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>AI Biometrics</h6>
+                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Facial recognition & smart card dual-auth.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <i className="bx bx-radar" style={{ fontSize: '26px', color: '#C0001A' }}></i>
+                          </div>
+                          <div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Real-Time Monitoring</h6>
+                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Instant tamper alerts & status tracking.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <i className="bx bx-history" style={{ fontSize: '26px', color: '#C0001A' }}></i>
+                          </div>
+                          <div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Comprehensive Audit</h6>
+                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Immutable digital trails for compliance.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <i className="bx bx-wifi-off" style={{ fontSize: '26px', color: '#C0001A' }}></i>
+                          </div>
+                          <div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Network-Isolated</h6>
+                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>100% operational on private networks.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <i className="bx bx-box" style={{ fontSize: '26px', color: '#C0001A' }}></i>
+                          </div>
+                          <div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Secure Storage</h6>
+                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Protect documents, laptops & comms gear.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div style={{ display: 'flex', gap: '15px' }}>
+                          <div style={{ width: '50px', height: '50px', borderRadius: '8px', background: '#fee2e2', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                            <i className="bx bx-shield-x" style={{ fontSize: '26px', color: '#C0001A' }}></i>
+                          </div>
+                          <div>
+                            <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>Tamper-Proof Security</h6>
+                            <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Auto-detects & alerts on unauthorized access.</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
+                  <div className="col-lg-4">
+                    <h4 style={{ color: '#1a2a4a', fontSize: '22px', fontWeight: '800', marginBottom: '25px' }}>Ideal For Defence</h4>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+                      <li style={{ padding: '12px 15px', background: '#f8fafc', borderLeft: '3px solid #1a2a4a', marginBottom: '10px', borderRadius: '0 8px 8px 0', fontSize: '14px', color: '#4a5568', fontWeight: '600' }}>Command & Control Centers</li>
+                      <li style={{ padding: '12px 15px', background: '#f8fafc', borderLeft: '3px solid #1a2a4a', marginBottom: '10px', borderRadius: '0 8px 8px 0', fontSize: '14px', color: '#4a5568', fontWeight: '600' }}>Ammunition & Arms Storage</li>
+                      <li style={{ padding: '12px 15px', background: '#f8fafc', borderLeft: '3px solid #1a2a4a', marginBottom: '10px', borderRadius: '0 8px 8px 0', fontSize: '14px', color: '#4a5568', fontWeight: '600' }}>Defence Manufacturing</li>
+                      <li style={{ padding: '12px 15px', background: '#f8fafc', borderLeft: '3px solid #1a2a4a', borderRadius: '0 8px 8px 0', fontSize: '14px', color: '#4a5568', fontWeight: '600' }}>R&D Laboratories</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
-              <hr style={{ borderColor: '#e2e8f0', margin: '30px 0' }} />
-
-              <div className="row align-items-center">
-                <div className="col-lg-8 mb-3 mb-lg-0">
-                  <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '14px', marginBottom: '10px', textTransform: 'uppercase' }}>Ideal For:</h6>
-                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0 }}>Armories • Intelligence Agencies • Special Forces Bases • Strategic Command Centers</p>
+              {/* Bottom CTA */}
+              <div style={{ background: '#f8fafc', padding: '30px 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ marginBottom: '15px', flex: '1 1 300px' }}>
+                  <h6 style={{ color: '#C0001A', fontWeight: '800', fontSize: '18px', marginBottom: '5px' }}>Because keys can be stolen, but faces cannot.</h6>
+                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0, fontWeight: '500' }}>Secure the core before the perimeter fails. Deploy Smart AI Lockers today.</p>
                 </div>
-                <div className="col-lg-4 text-start text-lg-end">
-                  <a href="#contact" style={{ display: 'inline-block', background: '#c0001a', color: '#fff', padding: '12px 24px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}>Secure Your Assets →</a>
+                <div style={{ flex: '0 0 auto' }}>
+                  <a href="#contact" style={{ display: 'inline-block', background: '#C0001A', color: '#fff', padding: '14px 30px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '15px', textTransform: 'uppercase', boxShadow: '0 4px 15px rgba(192,0,26,0.3)' }} className="hover-scale">
+                    Lock It Down <i className="bx bx-shield-quarter" style={{ verticalAlign: 'middle', fontSize: '20px', marginLeft: '5px' }}></i>
+                  </a>
                 </div>
               </div>
 
@@ -573,92 +950,168 @@ const Defense = () => {
                 Product 04
               </span>
               <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
-                High Secured Video & Voice Streaming
+                High-Secured Video & Voice Streaming
               </h2>
               <p style={{ color: '#cbd5e1', fontSize: '18px', maxWidth: '800px', margin: '0 auto', fontWeight: '300' }}>
-                <strong style={{color: '#fff', fontWeight: '600'}}>Uncompromised Tactical Feeds.</strong><br/>
-                Deliver mission-critical visuals and communications securely in the harshest environments.
+                <strong style={{color: '#fff', fontWeight: '600'}}>Unbreakable Comms. Unstoppable Missions.</strong><br/>
+                Mission-critical, encrypted communication over self-healing wireless mesh networks.
               </p>
             </div>
           </div>
 
           <div className="container" data-aos="fade-up">
-            <div style={{ background: '#fff', borderRadius: '24px', padding: '40px', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+            <div style={{ background: '#fff', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
               
-              <div className="row g-5 align-items-center">
-                
-                <div className="col-lg-6">
+              {/* Top Section: Intro & Challenges */}
+              <div className="row g-0">
+                <div className="col-lg-6" style={{ padding: '50px 40px', background: '#fff' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1a2a4a', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '25px' }}>
-                    <i className="bx bx-camera-movie"></i> TACTICAL MEDIA
+                    <i className="bx bx-broadcast"></i> TACTICAL COMMS
                   </div>
                   <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>
-                    See Everything. Expose Nothing.
+                    Beyond Line-of-Sight Connectivity
                   </h3>
-                  <p className="msl-text-body" style={{ fontSize: '16px', lineHeight: '1.7', marginBottom: '30px' }}>
-                    In both mining and military operations, live visual feedback is critical for commanding officers. We provide a streaming infrastructure built on end-to-end encryption, ensuring that intercepted signals are useless to adversaries, while delivering smooth feeds despite low bandwidth.
+                  <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.7', marginBottom: '30px' }}>
+                    Modern military missions and industrial operations increasingly depend on real-time communication. Our rugged platform provides real-time encrypted video, voice, and situational awareness across challenging environments where conventional communication infrastructure is unavailable or unreliable.
                   </p>
                   
-                  <div style={{ background: '#fff', borderLeft: '4px solid #c0001a', padding: '20px', borderRadius: '0 8px 8px 0', boxShadow: '0 2px 15px rgba(0,0,0,0.03)', marginBottom: '30px' }}>
-                    <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>The Problem We Solve</h6>
+                  <div style={{ background: '#f8fafc', borderLeft: '4px solid #c0001a', padding: '25px', borderRadius: '0 8px 8px 0', boxShadow: 'inset 2px 0 0 rgba(192,0,26,0.1)' }}>
+                    <h6 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '16px', marginBottom: '15px' }}>Operational Challenges</h6>
                     <ul style={{ paddingLeft: '20px', color: '#4a5568', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
-                      <li>Standard streaming protocols are easily intercepted</li>
-                      <li>High latency ruins tactical command decisions</li>
-                      <li>Feed drops in areas with degraded network connectivity</li>
+                      <li style={{ marginBottom: '8px' }}><strong>NLOS Limitations:</strong> Natural obstacles block direct radio contact.</li>
+                      <li style={{ marginBottom: '8px' }}><strong>Security Vulnerabilities:</strong> Sensitive data over unsecured channels is easily intercepted.</li>
+                      <li style={{ marginBottom: '8px' }}><strong>High Latency:</strong> Traditional systems lag during multimedia transmission.</li>
+                      <li><strong>Infrastructure Dependency:</strong> Cellular towers are useless in remote or disaster regions.</li>
                     </ul>
                   </div>
                 </div>
+                
+                <div className="col-lg-6" style={{ position: 'relative', minHeight: '400px', background: 'url(/assets/img/defense/relay_system_bg.png) center/cover' }}>
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%)' }}></div>
+                  <div style={{ position: 'absolute', bottom: '30px', right: '30px', background: 'rgba(26,42,74,0.9)', padding: '20px', borderRadius: '12px', backdropFilter: 'blur(10px)', color: '#fff', maxWidth: '300px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <h6 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Our Solution</h6>
+                    <p style={{ fontSize: '13px', margin: 0, color: '#cbd5e1', lineHeight: '1.5' }}>
+                      A resilient, self-forming wireless mesh network. Each relay node intelligently receives, encrypts, and forwards the data—extending coverage far beyond traditional limits.
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-                <div className="col-lg-6">
-                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '30px' }}>
-                    What You Get
-                  </h3>
-                  <div className="row g-4">
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-lock-alt" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Military Encryption</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>AES-256 and proprietary cryptographic layers securing every packet.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Unhackable</span></div>
-                      </div>
+              {/* Middle Section: Architecture & Features */}
+              <div style={{ background: '#1a2a4a', padding: '50px 40px', position: 'relative' }}>
+                <h4 style={{ color: '#fff', fontSize: '24px', fontWeight: '800', marginBottom: '30px', textAlign: 'center' }}>System Architecture</h4>
+                <div className="row g-4 mb-5">
+                  <div className="col-lg-3 col-md-6">
+                    <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', height: '100%', textAlign: 'center' }}>
+                      <i className="bx bx-user-pin" style={{ fontSize: '36px', color: '#60A5FA', marginBottom: '15px' }}></i>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Field Operator Unit</h6>
+                      <p style={{ color: '#cbd5e1', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Rugged handhelds for live video capture, voice comms, and secure GPS transmission.</p>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-wifi-off" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Low Bandwidth Ready</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Advanced codec compression maintains quality even over weak field networks.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Optimized</span></div>
-                      </div>
+                  </div>
+                  <div className="col-lg-3 col-md-6">
+                    <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', height: '100%', textAlign: 'center' }}>
+                      <i className="bx bx-network-chart" style={{ fontSize: '36px', color: '#A78BFA', marginBottom: '15px' }}></i>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Intelligent Relay Nodes</h6>
+                      <p style={{ color: '#cbd5e1', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Decompress, re-encode, encrypt, and forward packets to extend long-distance paths.</p>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-devices" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Cross-Platform</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>View feeds simultaneously on command center screens, tablets, and field devices.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Scalable</span></div>
-                      </div>
+                  </div>
+                  <div className="col-lg-3 col-md-6">
+                    <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', height: '100%', textAlign: 'center' }}>
+                      <i className="bx bx-share-alt" style={{ fontSize: '36px', color: '#34D399', marginBottom: '15px' }}></i>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Adaptive Mesh Network</h6>
+                      <p style={{ color: '#cbd5e1', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Self-healing auto-route discovery with dynamic path optimization and fault tolerance.</p>
                     </div>
-                    <div className="col-sm-6">
-                      <div className="ai-feature-card">
-                        <i className="bx bx-volume-full" style={{ fontSize: '36px', color: '#c0001a', marginBottom: '15px', display: 'block' }}></i>
-                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '16px', marginBottom: '10px' }}>Voice Integration</h5>
-                        <p className="msl-text-body" style={{ fontSize: '14px', margin: 0, lineHeight: '1.5', flexGrow: 1 }}>Synchronized, encrypted two-way voice comms embedded directly in the stream.</p>
-                        <div><span className="ai-tag"><i className="bx bx-check-circle" style={{ marginRight: '4px' }}></i> Integrated</span></div>
-                      </div>
+                  </div>
+                  <div className="col-lg-3 col-md-6">
+                    <div style={{ background: 'rgba(255,255,255,0.05)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', height: '100%', textAlign: 'center' }}>
+                      <i className="bx bx-building-house" style={{ fontSize: '36px', color: '#FBBF24', marginBottom: '15px' }}></i>
+                      <h6 style={{ color: '#fff', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Command Center</h6>
+                      <p style={{ color: '#cbd5e1', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>Central hub for live monitoring, GPS tracking, and coordinating operational responses.</p>
                     </div>
                   </div>
                 </div>
 
+                <div style={{ background: 'rgba(0,0,0,0.2)', padding: '40px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
+                  <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: '700', marginBottom: '25px' }}>Mesh Network Topography</h4>
+                  <img src="/assets/img/defense/relay_system_user.png" alt="Mesh Network Nodes Diagram" style={{ width: '100%', borderRadius: '12px', border: '2px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }} />
+                </div>
               </div>
 
-              <hr style={{ borderColor: '#e2e8f0', margin: '30px 0' }} />
+              {/* Bottom Section: Key Features & Benefits */}
+              <div style={{ padding: '50px 40px', background: '#fff' }}>
+                <div className="row g-5">
+                  {/* Key Features */}
+                  <div className="col-lg-6">
+                    <div style={{ background: '#f8fafc', padding: '30px', borderRadius: '16px', border: '1px solid #e2e8f0', height: '100%' }}>
+                      <h4 style={{ color: '#1a2a4a', fontSize: '22px', fontWeight: '800', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <i className="bx bx-star text-danger"></i> Key Features
+                      </h4>
+                      <div className="row g-3">
+                        {[
+                          "Live HD Video & Voice Streaming",
+                          "Multi-Hop Wireless Relay",
+                          "Beyond Line-of-Sight (BLOS) Communication",
+                          "End-to-End Encryption",
+                          "Adaptive Mesh Networking",
+                          "Low-Latency Streaming",
+                          "Real-Time Command Center Monitoring",
+                          "Rugged Portable Devices",
+                          "Scalable Relay Network",
+                          "Recording & Playback"
+                        ].map((item, idx) => (
+                          <div className="col-sm-6" key={idx}>
+                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                              <i className="bx bx-check-circle" style={{ color: '#C0001A', fontSize: '18px', marginTop: '2px' }}></i>
+                              <span style={{ fontSize: '14px', color: '#4a5568', fontWeight: '600', lineHeight: '1.4' }}>{item}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
 
-              <div className="row align-items-center">
-                <div className="col-lg-8 mb-3 mb-lg-0">
-                  <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '14px', marginBottom: '10px', textTransform: 'uppercase' }}>Ideal For:</h6>
-                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0 }}>Forward Operating Bases • Drone Command • Deep Underground Mining Operations</p>
+                  {/* Key Benefits */}
+                  <div className="col-lg-6">
+                    <div style={{ background: '#1a2a4a', padding: '30px', borderRadius: '16px', height: '100%' }}>
+                      <h4 style={{ color: '#fff', fontSize: '22px', fontWeight: '800', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <i className="bx bx-line-chart text-success"></i> Key Benefits
+                      </h4>
+                      <div className="row g-3">
+                        {[
+                          "Extended Communication Range",
+                          "Enhanced Situational Awareness",
+                          "Secure Mission Communications",
+                          "Reliable Connectivity",
+                          "Faster Decision-Making",
+                          "Infrastructure-Free Deployment",
+                          "Improved Personnel Safety",
+                          "Scalable Operations",
+                          "Continuous Mission Availability",
+                          "Lower Operational Costs"
+                        ].map((item, idx) => (
+                          <div className="col-sm-6" key={idx}>
+                            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', height: '100%' }}>
+                              <i className="bx bx-shield-plus" style={{ color: '#34D399', fontSize: '18px', marginTop: '1px' }}></i>
+                              <span style={{ fontSize: '13px', color: '#cbd5e1', fontWeight: '500', lineHeight: '1.4' }}>{item}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="col-lg-4 text-start text-lg-end">
-                  <a href="#contact" style={{ display: 'inline-block', background: '#c0001a', color: '#fff', padding: '12px 24px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '14px' }}>Deploy Secure Streaming →</a>
+              </div>
+
+              {/* Bottom CTA */}
+              <div style={{ background: '#f8fafc', padding: '30px 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ marginBottom: '15px', flex: '1 1 300px' }}>
+                  <h6 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', marginBottom: '5px' }}>Ready to command the unseen?</h6>
+                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0, fontWeight: '500' }}>Ideal for Military, Mining, Disaster Response, and Public Safety.</p>
+                </div>
+                <div style={{ flex: '0 0 auto' }}>
+                  <a href="#contact" style={{ display: 'inline-block', background: '#C0001A', color: '#fff', padding: '14px 30px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '15px', textTransform: 'uppercase', boxShadow: '0 4px 15px rgba(192,0,26,0.3)' }} className="hover-scale">
+                    Request Secure Demo <i className="bx bx-right-arrow-alt" style={{ verticalAlign: 'middle', fontSize: '20px', marginLeft: '5px' }}></i>
+                  </a>
                 </div>
               </div>
 
@@ -694,3 +1147,4 @@ const Defense = () => {
 };
 
 export default Defense;
+

@@ -25,14 +25,14 @@ const Header = () => {
         <div className="nav-container">
           
           {/* LOGO */}
-          <Link to="/" className="nav-logo">
-            <img src="/assets/img/logo.png" alt="MicroSysLogic Logo" />
+          <Link to="/" className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img src="/assets/img/companies/logo.png" alt="MicroSysLogic Logo" />
             <span className="logo-text">MicroSysLogic</span>
           </Link>
 
           {/* Standard Links */}
           <div className="top-links" style={{ alignItems: 'center' }}>
-            <Link to="/">Home</Link>
+            <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</Link>
             <Link to="/about">About us</Link>
 
             <div className="nav-dropdown">
@@ -100,9 +100,7 @@ const Header = () => {
                 <i className="bi bi-list" aria-hidden="true" style={{ fontSize: '24px' }}></i>
               </button>
               <div className="nav-dropdown-menu" style={{ left: 'auto', right: 0, top: 'calc(100% + 15px)', minWidth: '220px' }}>
-                <Link to="/career"><i className="bi bi-briefcase"></i> Careers</Link>
                 <Link to="/contact"><i className="bi bi-envelope"></i> Contact us</Link>
-                <Link to="#" onClick={(e) => e.preventDefault()}><i className="bi bi-search"></i> Search</Link>
                 <Link to="#" onClick={(e) => e.preventDefault()}><i className="bi bi-file-earmark-arrow-down"></i> Brochure</Link>
               </div>
             </div>
@@ -118,3 +116,4 @@ const Header = () => {
 };
 
 export default Header;
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -11,10 +12,12 @@ import Defense from './pages/Defense';
 import RenewableEnergy from './pages/RenewableEnergy';
 import SmartHospitals from './pages/SmartHospitals';
 import Customization from './pages/Customization';
+import Contact from './pages/Contact';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -52,7 +55,7 @@ function App() {
         
         <Route path="/training" element={<Placeholder title="Training" />} />
         <Route path="/career" element={<Placeholder title="Career" />} />
-        <Route path="/contact" element={<Placeholder title="Contact Us" />} />
+        <Route path="/contact" element={<Contact />} />
         
         {/* Fallback */}
         <Route path="*" element={<Placeholder title="404 Not Found" />} />

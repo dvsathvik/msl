@@ -20,10 +20,8 @@ const Footer = () => {
             <div className="col-lg-3 col-md-6 footer-links">
               <h4>Useful Links</h4>
               <ul>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/">Home</Link></li>
+                <li><i className="bx bx-chevron-right"></i> <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>Home</Link></li>
                 <li><i className="bx bx-chevron-right"></i> <Link to="/about">About us</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/products">Solutions</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services">Services</Link></li>
                 <li><i className="bx bx-chevron-right"></i> <Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
@@ -31,11 +29,12 @@ const Footer = () => {
             <div className="col-lg-3 col-md-6 footer-links">
               <h4>Quick Links</h4>
               <ul>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services/validation">Pre and Post Silicon Validation</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services/iot">IoT Solutions</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services/automotive">Automotive Solutions</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services/platform">SW porting & bring-up for HW platforms</Link></li>
-                <li><i className="bx bx-chevron-right"></i> <Link to="/services/home-security">Security Solutions</Link></li>
+                <li><i className="bx bx-chevron-right"></i> <Link to="/products/manufacturing">Manufacturing</Link></li>
+                <li><i className="bx bx-chevron-right"></i> <Link to="/products/ai">AI Solutions</Link></li>
+                <li><i className="bx bx-chevron-right"></i> <Link to="/products/defense">Defense</Link></li>
+                <li><i className="bx bx-chevron-right"></i> <Link to="/products/renewable">Renewable Energy</Link></li>
+                <li><i className="bx bx-chevron-right"></i> <Link to="/products/hospitals">Smart Hospitals</Link></li>
+                <li><i className="bx bx-chevron-right"></i> <Link to="/products/customization">Customization</Link></li>
               </ul>
             </div>
           </div>
