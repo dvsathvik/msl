@@ -49,7 +49,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/defense/2.webp" alt="Defense Automation Systems" />
+                    <img src="/assets/img/slider/slide1.png" alt="Defense Automation Systems" />
                   </div>
                 </div>
               </div>
@@ -76,7 +76,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/ai/3.webp" alt="Intelligent Security Automation" />
+                    <img src="/assets/img/slider/slide2.png" alt="Intelligent Security Automation" />
                   </div>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/defense/4.webp" alt="AI Secured Locker Systems" />
+                    <img src="/assets/img/slider/ai_secured_locker.png" alt="AI Secured Locker Systems" />
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/ai/5.webp" alt="Dynamic Traffic Signaling" />
+                    <img src="/assets/img/slider/dynamic_traffic.png" alt="Dynamic Traffic Signaling" />
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/manufacturing_automations/1.webp" alt="AI Driver Safety Systems" />
+                    <img src="/assets/img/slider/ai_driver_safety.png" alt="AI Driver Safety Systems" />
                   </div>
                 </div>
               </div>
@@ -184,7 +184,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/renewable_energy/7.webp" alt="Solar Profiling & SCADA" />
+                    <img src="/assets/img/slider/solar_profiling.png" alt="Solar Profiling & SCADA" />
                   </div>
                 </div>
               </div>
@@ -211,7 +211,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/manufacturing_automations/8.webp" alt="Industrial IoT GateNodes" />
+                    <img src="/assets/img/slider/industrial_iot.png" alt="Industrial IoT GateNodes" />
                   </div>
                 </div>
               </div>
@@ -238,7 +238,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/manufacturing_automations/9.webp" alt="SafeLoad Driver Safety" />
+                    <img src="/assets/img/slider/safeload_driver.png" alt="SafeLoad Driver Safety" />
                   </div>
                 </div>
               </div>
@@ -265,7 +265,7 @@ const Hero = () => {
                 </div>
                 <div className="hero-image-col">
                   <div className="hero-image-panel">
-                    <img src="/assets/img/manufacturing_automations/iot.webp" alt="Escalator & Lift Diagnostics" />
+                    <img src="/assets/img/slider/slide9.png" alt="Escalator & Lift Diagnostics" />
                   </div>
                 </div>
               </div>
