@@ -507,9 +507,11 @@ const Customization = () => {
               <div style={{ background: '#0E1628', color: '#fff', padding: '50px 40px' }}>
                 <div className="row align-items-center g-5">
                   <div className="col-lg-6">
-                    <span style={{ color: '#FF4D4D', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', fontSize: '12px', display: 'block', marginBottom: '15px' }}>
-                      <i className="bx bx-chip" style={{ marginRight: '5px' }}></i> Edge AI & Security
-                    </span>
+                    <div style={{ marginBottom: '15px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                      <span style={{ display: 'inline-block', background: 'rgba(192,0,26,0.1)', color: '#c0001a', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px' }}>
+                        <i className="bx bx-chip" style={{ marginRight: '5px' }}></i> EDGE AI & SECURITY
+                      </span>
+                    </div>
                     <h3 style={{ fontSize: '32px', fontWeight: '800', lineHeight: '1.2', marginBottom: '20px', color: '#fff' }}>
                       Broadcom SoC <span style={{ color: '#FF4D4D' }}>Platform Integration</span>
                     </h3>
@@ -727,10 +729,12 @@ const Customization = () => {
                       ].map((feature, idx) => (
                         <div className="col-sm-6" key={idx}>
                           <div className="p4-feature-card">
-                            <div className="p4-icon-box-inline" style={{ width: '45px', height: '45px', background: '#f8fafc', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', marginBottom: '20px' }}>
-                              <i className={`bx ${feature.icon}`}></i>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '12px' }}>
+                              <div className="p4-icon-box-inline" style={{ width: '45px', height: '45px', background: '#f8fafc', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0 }}>
+                                <i className={`bx ${feature.icon}`}></i>
+                              </div>
+                              <h5 className="msl-navy" style={{ fontSize: '16px', fontWeight: '800', margin: 0 }}>{feature.title}</h5>
                             </div>
-                            <h5 className="msl-navy" style={{ fontSize: '16px', fontWeight: '800', marginBottom: '8px' }}>{feature.title}</h5>
                             <p className="msl-text-body" style={{ fontSize: '13px', margin: 0, lineHeight: '1.5' }}>{feature.desc}</p>
                           </div>
                         </div>
@@ -840,7 +844,14 @@ const Customization = () => {
                 </div>
                 <div className="col-lg-7" style={{ padding: '50px 40px', background: '#fff' }}>
                   <div className="mb-5">
-                    <span style={{ color: '#c0001a', fontSize: '12px', fontWeight: '800', letterSpacing: '2px', textTransform: 'uppercase' }}>AI-Powered Surveillance · Thermal Intelligence</span>
+                    <div style={{ marginBottom: '15px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                      <span style={{ display: 'inline-block', background: 'rgba(192,0,26,0.1)', color: '#c0001a', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px' }}>
+                        AI-POWERED SURVEILLANCE
+                      </span>
+                      <span style={{ display: 'inline-block', background: 'rgba(192,0,26,0.1)', color: '#c0001a', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px' }}>
+                        THERMAL INTELLIGENCE
+                      </span>
+                    </div>
                     <h3 className="msl-navy mt-2" style={{ fontSize: '32px', fontWeight: '800' }}>See Clearly <span style={{ color: '#c0001a' }}>When Nothing Else Can</span></h3>
                     <p style={{ fontSize: '16px', color: '#64748b', lineHeight: '1.6', marginTop: '10px' }}>When fog, rain, smoke, or darkness shuts down conventional surveillance, our thermal AI keeps your perimeter intelligence fully operational — detecting, ranging, and classifying threats with zero degradation.</p>
                   </div>
@@ -910,18 +921,17 @@ const Customization = () => {
                 </div>
                 <div className="col-lg-6" style={{ padding: '50px 40px', background: '#f8fafc' }}>
                   <h3 className="msl-navy" style={{ fontSize: '24px', fontWeight: '800', marginBottom: '30px' }}>How It Works</h3>
-                  <div style={{ position: 'relative', borderLeft: '2px dashed #cbd5e1', paddingLeft: '30px', marginLeft: '10px' }}>
+                  <div style={{ position: 'relative', paddingLeft: '30px' }}>
+                    <div style={{ position: 'absolute', left: '11px', top: '10px', bottom: '20px', width: '2px', background: 'linear-gradient(to bottom, #c0001a, rgba(192,0,26,0.1))' }}></div>
                     {[
                       { step: '1', title: 'Capture', desc: 'Thermal cameras stream radiometric data continuously, capturing heat signatures invisible to the human eye.' },
                       { step: '2', title: 'Analyse', desc: 'Onboard AI models process each frame to detect, classify, and range entities in real time.' },
                       { step: '3', title: 'Alert', desc: 'Distance-tagged alerts are delivered to your security dashboard or integrated into your existing VMS.' }
                     ].map((hw, j) => (
-                      <div key={j} style={{ position: 'relative', marginBottom: j === 2 ? 0 : '35px' }}>
-                        <div style={{ position: 'absolute', left: '-42px', top: '0', width: '24px', height: '24px', borderRadius: '50%', background: '#fff', border: '2px solid #c0001a', color: '#c0001a', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', fontWeight: '800' }}>
-                          {hw.step}
-                        </div>
-                        <h6 className="msl-navy" style={{ fontSize: '16px', fontWeight: '800', margin: '0 0 8px 0' }}>{hw.title}</h6>
-                        <p style={{ margin: 0, fontSize: '14px', color: '#64748b', lineHeight: '1.6' }}>{hw.desc}</p>
+                      <div key={j} style={{ position: 'relative', marginBottom: j === 2 ? 0 : '30px' }}>
+                        <div style={{ position: 'absolute', left: '-30px', top: '0', width: '24px', height: '24px', borderRadius: '50%', background: '#c0001a', border: '4px solid #fff', boxShadow: '0 0 0 2px rgba(192,0,26,0.2)' }}></div>
+                        <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '8px' }}>{hw.step}. {hw.title}</h5>
+                        <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>{hw.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -947,7 +957,7 @@ const Customization = () => {
 
         <section id="dehaze" ref={dehazeRef} style={{ paddingBottom: '40px' }}>
           {/* Top Banner */}
-          <div className="caution-stripe msl-bg-navy" style={{ padding: '80px 0 60px 0', borderBottom: '4px solid #c0001a' }}>
+          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '40px' }}>
             <div className="container text-center position-relative" style={{ zIndex: 1 }}>
               <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px', marginBottom: '20px' }}>
                 Product 04
@@ -966,9 +976,9 @@ const Customization = () => {
             <div className="msl-product-wrapper" style={{ padding: '0', overflow: 'hidden' }}>
               
               <div className="p-4 p-lg-5">
-                <div className="row g-5 align-items-center mb-5 mt-2">
+                <div className="row g-5 align-items-center mb-5">
                   <div className="col-lg-6 text-center">
-                    <h3 className="msl-navy" style={{ fontSize: '20px', fontWeight: '800', marginBottom: '15px' }}>Raw vs. Deep Learning Dehaze</h3>
+
                     <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', background: '#000', display: 'inline-block', position: 'relative', width: '100%' }}>
                       <img src="/assets/img/ai/dehaze_landscape.png" alt="Dehaze Split Demo" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }} />
                       <div style={{ position: 'absolute', top: '15px', left: '15px', background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '5px 10px', borderRadius: '6px', fontSize: '11px', fontWeight: '700' }}>RAW (Unusable)</div>
@@ -976,7 +986,14 @@ const Customization = () => {
                     </div>
                   </div>
                   <div className="col-lg-6">
-                    <span style={{ color: '#c0001a', fontSize: '12px', fontWeight: '800', letterSpacing: '2px', textTransform: 'uppercase' }}>Visual Intelligence · Real-Time Enhancement</span>
+                    <div style={{ marginBottom: '15px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                      <span style={{ display: 'inline-block', background: 'rgba(192,0,26,0.1)', color: '#c0001a', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px' }}>
+                        VISUAL INTELLIGENCE
+                      </span>
+                      <span style={{ display: 'inline-block', background: 'rgba(192,0,26,0.1)', color: '#c0001a', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px' }}>
+                        REAL-TIME ENHANCEMENT
+                      </span>
+                    </div>
                     <h3 className="msl-navy mt-2" style={{ fontSize: '32px', fontWeight: '800' }}>Your Cameras <span style={{ color: '#c0001a' }}>Never Go Blind Again</span></h3>
                     <p style={{ fontSize: '16px', color: '#64748b', lineHeight: '1.6', marginTop: '15px', marginBottom: '30px' }}>
                       Heavy fog, dense snow, and driving rain don't pause operations — your surveillance shouldn't either. Our deep learning dehazing engine restores full visual clarity to compromised feeds in real time, so every frame is actionable, every moment is recorded, and nothing slips through.
@@ -1005,22 +1022,19 @@ const Customization = () => {
                 {/* Bottom Section: Pipeline & Use Cases */}
                 <div className="row g-5 align-items-stretch mb-4">
                   <div className="col-lg-6">
-                    <div style={{ background: '#0f172a', padding: '40px 30px', borderRadius: '20px', height: '100%' }}>
-                      <h3 style={{ color: '#fff', fontSize: '24px', fontWeight: '800', marginBottom: '30px' }}>The Pipeline</h3>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+                    <div style={{ background: '#fff', border: '1px solid #e2e8f0', padding: '40px 30px', borderRadius: '20px', height: '100%' }}>
+                      <h3 className="msl-navy" style={{ fontSize: '24px', fontWeight: '800', marginBottom: '30px' }}>The Pipeline</h3>
+                      <div style={{ position: 'relative', paddingLeft: '30px' }}>
+                        <div style={{ position: 'absolute', left: '11px', top: '10px', bottom: '20px', width: '2px', background: 'linear-gradient(to bottom, #c0001a, rgba(192,0,26,0.1))' }}></div>
                         {[
                           { s: 'Ingest', d: 'Raw camera feeds streamed in real time.' },
                           { s: 'Decompose', d: 'AI separates true scene from noise.' },
                           { s: 'Deliver', d: 'Enhanced video passed to your VMS.' }
                         ].map((step, idx) => (
-                          <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                            <div style={{ width: '45px', height: '45px', background: '#c0001a', color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '18px', fontWeight: '800', flexShrink: 0 }}>
-                              {idx + 1}
-                            </div>
-                            <div>
-                              <h5 style={{ color: '#fff', fontSize: '18px', fontWeight: '800', margin: '0 0 5px 0' }}>{step.s}</h5>
-                              <p style={{ color: '#94a3b8', fontSize: '14px', margin: 0 }}>{step.d}</p>
-                            </div>
+                          <div key={idx} style={{ position: 'relative', marginBottom: idx === 2 ? 0 : '30px' }}>
+                            <div style={{ position: 'absolute', left: '-30px', top: '0', width: '24px', height: '24px', borderRadius: '50%', background: '#c0001a', border: '4px solid #fff', boxShadow: '0 0 0 2px rgba(192,0,26,0.2)' }}></div>
+                            <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '8px' }}>{idx + 1}. {step.s}</h5>
+                            <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>{step.d}</p>
                           </div>
                         ))}
                       </div>
@@ -1028,18 +1042,18 @@ const Customization = () => {
                   </div>
 
                   <div className="col-lg-6">
-                    <div style={{ padding: '30px', borderRadius: '20px', border: '1px solid #e2e8f0', background: '#fff', height: '100%' }}>
-                      <h3 className="msl-navy" style={{ fontSize: '24px', fontWeight: '800', marginBottom: '30px' }}>Essential Use Cases</h3>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <div style={{ padding: '20px 10px', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <h3 className="msl-navy" style={{ fontSize: '24px', fontWeight: '800', marginBottom: '30px' }}>Core Applications</h3>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
                         {[
-                          { t: 'Traffic Surveillance', d: 'Read licence plates during fog and heavy rain.' },
-                          { t: 'Airport Runways', d: 'Maintain visual coverage of ground movements.' },
-                          { t: 'Port & Logistics', d: 'Track vehicles through coastal fog.' }
-                        ].map((uc, i) => (
-                          <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '15px', background: '#f8fafc', padding: '20px', borderRadius: '12px' }}>
-                            <i className="bx bxs-camera-movie" style={{ color: '#c0001a', fontSize: '24px', marginTop: '2px' }}></i>
+                          { t: 'Traffic Surveillance', d: 'Read licence plates during fog and heavy rain.', i: 'bxs-car' },
+                          { t: 'Airport Runways', d: 'Maintain visual coverage of ground movements.', i: 'bxs-plane-alt' },
+                          { t: 'Port & Logistics', d: 'Track vehicles through coastal fog.', i: 'bxs-ship' }
+                        ].map((uc, idx) => (
+                          <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '15px', background: '#fff', border: '1px solid #e2e8f0', borderLeft: '4px solid #c0001a', padding: '20px', borderRadius: '10px', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}>
+                            <i className={`bx ${uc.i}`} style={{ color: '#c0001a', fontSize: '26px' }}></i>
                             <div>
-                              <h6 className="msl-navy" style={{ fontSize: '16px', fontWeight: '800', margin: '0 0 5px 0' }}>{uc.t}</h6>
+                              <h6 className="msl-navy" style={{ fontSize: '16px', fontWeight: '800', margin: '0 0 6px 0' }}>{uc.t}</h6>
                               <p style={{ margin: 0, fontSize: '14px', color: '#64748b', lineHeight: '1.5' }}>{uc.d}</p>
                             </div>
                           </div>
@@ -1089,14 +1103,21 @@ const Customization = () => {
 
               <div className="p-4 p-lg-5">
                 {/* Intro Section */}
-                <div className="row g-5 align-items-center mb-5 mt-2">
+                <div className="row g-5 align-items-center mb-5">
                   <div className="col-lg-6">
                     <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.1)' }}>
                       <img src="/assets/img/manufacturing_automations/manufacturing_defect_qa.png" alt="Product Defect Detection" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   </div>
                   <div className="col-lg-6">
-                    <span style={{ color: '#c0001a', fontSize: '12px', fontWeight: '800', letterSpacing: '2px', textTransform: 'uppercase' }}>Manufacturing Intelligence · Coming Soon</span>
+                    <div style={{ marginBottom: '15px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                      <span style={{ display: 'inline-block', background: 'rgba(192,0,26,0.1)', color: '#c0001a', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px' }}>
+                        MANUFACTURING INTELLIGENCE
+                      </span>
+                      <span style={{ display: 'inline-block', background: 'rgba(192,0,26,0.1)', color: '#c0001a', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px' }}>
+                        COMING SOON
+                      </span>
+                    </div>
                     <h3 className="msl-navy mt-2" style={{ fontSize: '32px', fontWeight: '800' }}>Zero Defects. <span style={{ color: '#c0001a' }}>Full Speed. No Compromises.</span></h3>
                     <p style={{ fontSize: '16px', color: '#64748b', lineHeight: '1.6', marginTop: '15px', marginBottom: '25px' }}>
                       Manual inspection misses what moves too fast and costs too much to scale. Our computer vision QA system scans every unit on your production line at full conveyor speed — catching micro-defects, surface anomalies, and misalignments in real time, before they become customer problems.
@@ -1116,17 +1137,19 @@ const Customization = () => {
                   <h3 className="msl-navy" style={{ fontSize: '24px', fontWeight: '800', marginBottom: '25px' }}>Core Capabilities</h3>
                   <div className="row g-4">
                     {[
-                      { icon: 'bx-search-alt', t: 'Micro-Defect Scanning', d: 'Detects surface scratches, cracks, pinholes, and contamination invisible to the human eye — caught at line speed, not in lab conditions.' },
-                      { icon: 'bx-tachometer', t: 'High-Speed QA', d: 'Vision models optimised for fast-moving conveyor belts — inspection keeps pace with your production rate, never your bottleneck.' },
-                      { icon: 'bx-ruler', t: 'Misalignment Detection', d: 'Identifies dimensional inconsistencies, off-centre components, and assembly errors before units leave the line.' },
-                      { icon: 'bx-error-circle', t: 'Automated Rejection', d: 'Defective units are flagged and routed for rejection automatically — no human in the loop needed for the go/no-go decision.' },
-                      { icon: 'bx-line-chart', t: 'Analytics Dashboard', d: 'Every anomaly is logged, categorised, and visualised — giving QA managers trend data to trace root causes upstream.' },
-                      { icon: 'bx-wrench', t: 'Line-Agnostic Setup', d: 'Integrates with existing conveyor infrastructure and industrial cameras — no line shutdown or hardware overhaul required.' }
+                      { icon: 'bx-search-alt', t: 'Micro-Defect Scanning', d: 'Spots microscopic scratches, cracks, and anomalies instantly at full production speed.' },
+                      { icon: 'bx-tachometer', t: 'High-Speed QA', d: 'Vision models optimized for fast conveyors, ensuring inspection never slows your production.' },
+                      { icon: 'bx-ruler', t: 'Misalignment Detection', d: 'Catches dimensional flaws, off-centre parts, and assembly errors before leaving the line.' },
+                      { icon: 'bx-error-circle', t: 'Automated Rejection', d: 'Automatically flags and routes defective units for rejection without human intervention.' },
+                      { icon: 'bx-line-chart', t: 'Analytics Dashboard', d: 'Logs and visualizes every anomaly, empowering QA managers to trace upstream root causes.' },
+                      { icon: 'bx-wrench', t: 'Line-Agnostic Setup', d: 'Seamlessly integrates with your existing cameras and conveyors with zero downtime required.' }
                     ].map((cap, i) => (
                       <div key={i} className="col-md-4">
                         <div style={{ background: '#f8fafc', padding: '25px', borderRadius: '16px', border: '1px solid #e2e8f0', height: '100%', transition: 'all 0.3s ease' }}>
-                          <i className={`bx ${cap.icon}`} style={{ color: '#c0001a', fontSize: '30px', marginBottom: '15px' }}></i>
-                          <h5 className="msl-navy" style={{ fontSize: '16px', fontWeight: '800', marginBottom: '10px' }}>{cap.t}</h5>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
+                            <i className={`bx ${cap.icon}`} style={{ color: '#c0001a', fontSize: '28px' }}></i>
+                            <h5 className="msl-navy" style={{ fontSize: '16px', fontWeight: '800', margin: 0 }}>{cap.t}</h5>
+                          </div>
                           <p style={{ margin: 0, fontSize: '13px', color: '#475569', lineHeight: '1.6' }}>{cap.d}</p>
                         </div>
                       </div>
@@ -1153,23 +1176,20 @@ const Customization = () => {
                     </div>
                   </div>
                   <div className="col-lg-6">
-                    <div style={{ background: '#0f172a', padding: '30px', borderRadius: '20px', height: '100%' }}>
-                      <h3 style={{ color: '#fff', fontSize: '24px', fontWeight: '800', marginBottom: '25px' }}>How It Works</h3>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <div style={{ padding: '30px', borderRadius: '20px', border: '1px solid #e2e8f0', background: '#fff', height: '100%' }}>
+                      <h3 className="msl-navy" style={{ fontSize: '24px', fontWeight: '800', marginBottom: '30px' }}>How It Works</h3>
+                      <div style={{ position: 'relative', paddingLeft: '30px' }}>
+                        <div style={{ position: 'absolute', left: '11px', top: '10px', bottom: '20px', width: '2px', background: 'linear-gradient(to bottom, #c0001a, rgba(192,0,26,0.1))' }}></div>
                         {[
                           { s: 'Capture', d: 'High-res industrial cameras mounted above the conveyor capture every unit at line speed with consistent lighting control.' },
                           { s: 'Inspect', d: 'Computer vision models analyse each frame against a learned baseline of defect-free products, flagging any deviation.' },
                           { s: 'Decide', d: 'Units are classified as pass, review, or reject in milliseconds — triggering automated sorting or alerting line operators.' },
                           { s: 'Learn', d: 'Every flagged defect feeds back into the model, continuously tightening detection accuracy for your specific product and line.' }
                         ].map((step, idx) => (
-                          <div key={idx} style={{ display: 'flex', gap: '15px' }}>
-                            <div style={{ width: '30px', height: '30px', background: 'rgba(192,0,26,0.2)', color: '#ff4d6a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '14px', fontWeight: '800', flexShrink: 0 }}>
-                              {idx + 1}
-                            </div>
-                            <div>
-                              <h5 style={{ color: '#fff', fontSize: '15px', fontWeight: '800', margin: '0 0 5px 0' }}>{step.s}</h5>
-                              <p style={{ color: '#94a3b8', fontSize: '13px', margin: 0, lineHeight: '1.5' }}>{step.d}</p>
-                            </div>
+                          <div key={idx} style={{ position: 'relative', marginBottom: idx === 3 ? 0 : '30px' }}>
+                            <div style={{ position: 'absolute', left: '-30px', top: '0', width: '24px', height: '24px', borderRadius: '50%', background: '#c0001a', border: '4px solid #fff', boxShadow: '0 0 0 2px rgba(192,0,26,0.2)' }}></div>
+                            <h5 className="msl-navy" style={{ fontWeight: '700', fontSize: '18px', marginBottom: '8px' }}>{idx + 1}. {step.s}</h5>
+                            <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>{step.d}</p>
                           </div>
                         ))}
                       </div>
@@ -1238,10 +1258,10 @@ const Customization = () => {
                   <div style={{ position: 'absolute', top: '-50%', left: '-20%', width: '100%', height: '200%', background: 'radial-gradient(circle at 0% 0%, rgba(192,0,26,0.15) 0%, transparent 60%)', pointerEvents: 'none' }}></div>
                   
                   <div className="row align-items-center position-relative" style={{ zIndex: 1 }}>
-                    <div className="col-lg-7 mb-4 mb-lg-0">
+                    <div className="col-lg-12 mb-4 mb-lg-0">
                       <span style={{ color: '#ff4d6a', fontSize: '12px', fontWeight: '800', letterSpacing: '2px', textTransform: 'uppercase' }}>Early Access</span>
                       <h3 style={{ color: '#fff', fontSize: '28px', fontWeight: '800', margin: '10px 0 15px' }}>Be First on the Line</h3>
-                      <p style={{ color: '#cbd5e1', fontSize: '15px', lineHeight: '1.6', marginBottom: '20px' }}>
+                      <p style={{ color: '#cbd5e1', fontSize: '15px', lineHeight: '1.6', marginBottom: '20px', maxWidth: '800px' }}>
                         Product Defect Detection is currently in active development with select manufacturing partners. Early access clients get priority onboarding, custom model training on their specific product line, and locked-in pilot pricing.
                       </p>
                       
@@ -1256,17 +1276,7 @@ const Customization = () => {
                       
                       <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
                         <a href="#contact" className="btn btn-danger" style={{ background: '#c0001a', border: 'none', padding: '12px 25px', borderRadius: '8px', fontWeight: '700', fontSize: '14px' }}>Join Waitlist — Get Early Access</a>
-                        <a href="#contact" className="btn btn-outline-light" style={{ padding: '12px 25px', borderRadius: '8px', fontWeight: '700', fontSize: '14px' }}>Talk to Our Team About Your Line</a>
-                      </div>
-                    </div>
-                    
-                    <div className="col-lg-5">
-                      <div style={{ background: 'rgba(255,255,255,0.05)', padding: '30px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <i className="bx bxs-quote-alt-left" style={{ color: '#c0001a', fontSize: '30px', marginBottom: '15px' }}></i>
-                        <p style={{ color: '#fff', fontSize: '15px', lineHeight: '1.6', fontStyle: 'italic', marginBottom: '15px' }}>
-                          "We're validating with leading manufacturing partners across electronics and automotive sectors. Early results show defect catch rates exceeding 99.4% with false positive rates below 0.1%."
-                        </p>
-                        <p style={{ margin: 0, color: '#94a3b8', fontSize: '13px', fontWeight: '600' }}>— Development update, MSL Engineering Team</p>
+                        <a href="#contact" className="btn btn-outline-light" style={{ padding: '12px 25px', borderRadius: '8px', fontWeight: '700', fontSize: '14px' }}>Talk to Our Team</a>
                       </div>
                     </div>
                   </div>
@@ -1277,40 +1287,6 @@ const Customization = () => {
           </div>
         </section>
 
-        {/* =========================================
-            CORE EDGE AI ENABLEMENT
-        ========================================= */}
-        <section style={{ padding: '0 0 60px' }}>
-          <div className="container" data-aos="fade-up">
-            <div className="core-edge-card">
-              <h3 style={{ color: '#ffffff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
-                Core Edge AI Enablement
-              </h3>
-              <p style={{ color: '#cbd5e1', fontSize: '16px', maxWidth: '800px', margin: '0 auto 50px', fontWeight: '400' }}>
-                End-to-end hardware and software integration to bring advanced AI directly to the edge.
-              </p>
-              
-              <div className="row g-4 justify-content-center">
-                {[
-                  { icon: 'bx-chip', title: 'PCB Design' },
-                  { icon: 'bx-brain', title: 'Edge AI Deployment' },
-                  { icon: 'bx-code-alt', title: 'Embedded Software' },
-                  { icon: 'bx-box', title: 'Casing & Integration' },
-                  { icon: 'bx-cog', title: 'Custom Solution Engineering' }
-                ].map((item, idx) => (
-                  <div className="col-lg-2 col-md-4 col-sm-6" key={idx}>
-                    <div className="core-edge-item">
-                      <div className="core-edge-icon">
-                        <i className={`bx ${item.icon}`}></i>
-                      </div>
-                      <h6 style={{ color: '#fff', fontSize: '15px', fontWeight: '700', margin: 0 }}>{item.title}</h6>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* =========================================
             CUSTOM ORDERS CTA

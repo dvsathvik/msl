@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,36 +23,20 @@ const Contact = () => {
     setIsSubmitting(true);
     setStatus('');
 
-    // Web3Forms API Endpoint
-    const web3formsAccessKey = '832a16fa-fc9a-43bb-935c-ba69c49425d9';
-
-    const payload = {
-      ...formData,
-      access_key: web3formsAccessKey
-    };
-
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(payload)
+      await addDoc(collection(db, 'mail'), {
+        to: 'info@microsyslogic.com',
+        message: {
+          subject: `New Contact: ${formData.subject}`,
+          text: `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
+        }
       });
 
-      const result = await response.json();
-      
-      if (result.success) {
-        setStatus('Thanks for contacting us, we will reply soon!');
-        setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); // clear form
-      } else {
-        setStatus('Something went wrong. Please try again.');
-        console.error(result);
-      }
+      setStatus('Thanks for contacting us, we will reply soon!');
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); // clear form
     } catch (error) {
       setStatus('An error occurred. Please try again later.');
-      console.error(error);
+      console.error("Error adding document: ", error);
     } finally {
       setIsSubmitting(false);
     }

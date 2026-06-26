@@ -38,7 +38,7 @@ const Header = () => {
             <div className="nav-dropdown">
               <Link to="/products/defense">Defense</Link>
               <div className="nav-dropdown-menu">
-                <Link to="/products/defense/mission"><i className="bi bi-star"></i> Mission critical technology</Link>
+
                 <Link to="/products/defense/t90"><i className="bi bi-broadcast"></i> T90’s Vehicles2Vehicles RF Comm. & Automation</Link>
                 <Link to="/products/defense/g3000"><i className="bi bi-airplane"></i> G3000 Cockpit Monitor Device in Avionics</Link>
                 <Link to="/products/defense/locker"><i className="bi bi-safe"></i> SMART AI Locker Systems For Defence</Link>
@@ -88,7 +88,7 @@ const Header = () => {
                 <Link to="/products/customization/thermal"><i className="bi bi-thermometer-half"></i> Thermal camera distance Detection</Link>
                 <Link to="/products/customization/dehaze"><i className="bi bi-cloud-haze"></i> Dehaze / Snow-Fog Removal</Link>
                 <Link to="/products/customization/defect"><i className="bi bi-search"></i> Product Defect Detect</Link>
-                <Link to="/products/customization/other"><i className="bi bi-grid-3x3-gap"></i> other</Link>
+
               </div>
             </div>
           </div>

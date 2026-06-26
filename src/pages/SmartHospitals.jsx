@@ -380,7 +380,7 @@ const SmartHospitals = () => {
             <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '40px' }}>
               <div className="container text-center position-relative" style={{ zIndex: 1 }}>
                 <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px', marginBottom: '20px' }}>
-                  Smart Hospital IoT System
+                  product 01
                 </span>
                 <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
                   Intelligent Connected Healthcare Infrastructure
