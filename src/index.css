@@ -234,3 +234,32 @@ i.ai-icon-box {
 .cta-section { background: #1a2a4a; color: #fff; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border-top: 4px solid #c0001a; }
 .cta-btn-hover { background: #c0001a; color: #fff; padding: 12px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
 .cta-btn-hover:hover { background: #fff; color: #c0001a; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(192,0,26,0.3); }
+
+/* Solar Page Specific Styles */
+.solar-image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.solar-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.solar-overlay-card {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 320px;
+  border-left: 4px solid #c0001a;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  z-index: 2;
+}
