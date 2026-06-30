@@ -23,6 +23,7 @@ const Defense = () => {
   const lockerRef = useRef(null);
   const videoRef = useRef(null);
   const socModernizationRef = useRef(null);
+  const aiSecurityRef = useRef(null);
 
   useEffect(() => {
     if (productId === 't90' && t90Ref.current) {
@@ -35,6 +36,8 @@ const Defense = () => {
       videoRef.current.scrollIntoView({ behavior: 'smooth' });
     } else if (productId === 'soc-modernization' && socModernizationRef.current) {
       socModernizationRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (productId === 'ai-security' && aiSecurityRef.current) {
+      aiSecurityRef.current.scrollIntoView({ behavior: 'smooth' });
     } else {
       window.scrollTo(0, 0);
     }
@@ -1273,7 +1276,7 @@ const Defense = () => {
         {/* =========================================
             PRODUCT 6: AI Secured Zones Monitoring System
         ========================================= */}
-        <section id="ai-security" style={{ background: '#f8fafc', paddingBottom: '60px' }}>
+        <section id="ai-security" ref={aiSecurityRef} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
           
           <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '40px' }}>
             <div className="container text-center position-relative" style={{ zIndex: 1 }}>
