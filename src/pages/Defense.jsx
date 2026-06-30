@@ -26,21 +26,25 @@ const Defense = () => {
   const aiSecurityRef = useRef(null);
 
   useEffect(() => {
-    if (productId === 't90' && t90Ref.current) {
-      t90Ref.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (productId === 'g3000' && g3000Ref.current) {
-      g3000Ref.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (productId === 'locker' && lockerRef.current) {
-      lockerRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (productId === 'video' && videoRef.current) {
-      videoRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (productId === 'soc-modernization' && socModernizationRef.current) {
-      socModernizationRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (productId === 'ai-security' && aiSecurityRef.current) {
-      aiSecurityRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.scrollTo(0, 0);
-    }
+    const timer = setTimeout(() => {
+      if (productId === 't90' && t90Ref.current) {
+        t90Ref.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (productId === 'g3000' && g3000Ref.current) {
+        g3000Ref.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (productId === 'locker' && lockerRef.current) {
+        lockerRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (productId === 'video' && videoRef.current) {
+        videoRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (productId === 'soc-modernization' && socModernizationRef.current) {
+        socModernizationRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else if (productId === 'ai-security' && aiSecurityRef.current) {
+        aiSecurityRef.current.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }, 150);
+
+    return () => clearTimeout(timer);
   }, [productId]);
 
   return (
