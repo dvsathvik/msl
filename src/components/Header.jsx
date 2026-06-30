@@ -26,7 +26,7 @@ const Header = () => {
           
           {/* LOGO */}
           <Link to="/" className="nav-logo" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src="/assets/img/companies/logo.png" alt="MicroSysLogic Logo" />
+            <img src="/assets/img/companies/logo.webp" alt="MicroSysLogic Logo" />
             <span className="logo-text">MicroSysLogic</span>
           </Link>
 
@@ -43,6 +43,8 @@ const Header = () => {
                 <Link to="/products/defense/g3000"><i className="bi bi-airplane"></i> G3000 Cockpit Monitor Device in Avionics</Link>
                 <Link to="/products/defense/locker"><i className="bi bi-safe"></i> SMART AI Locker Systems For Defence</Link>
                 <Link to="/products/defense/video"><i className="bi bi-camera-reels"></i> High Secured Video and Voice Streaming</Link>
+                <Link to="/products/defense/soc-modernization"><i className="bi bi-cpu"></i> Legacy to Latest SOC Modernization</Link>
+                <Link to="/products/defense/ai-security"><i className="bi bi-shield-lock"></i> AI Secured Zones Monitoring System</Link>
               </div>
             </div>
 
@@ -68,6 +70,8 @@ const Header = () => {
                 <Link to="/products/hospitals/automation"><i className="bi bi-hospital"></i> Smart Hospital IOT Automation & Monitoring System</Link>
                 <Link to="/products/hospitals/locker"><i className="bi bi-shield-lock"></i> AI Secured Locker Systems for Drugs</Link>
                 <Link to="/products/hospitals/asset"><i className="bi bi-box-seam"></i> Asset Management</Link>
+                <Link to="/products/hospitals/nurse-tablet"><i className="bi bi-tablet"></i> Smart AI Locker for Nurse Tablets</Link>
+                <Link to="/products/hospitals/impress-stock"><i className="bi bi-inboxes"></i> Impress Stock AI Medicine Access</Link>
               </div>
             </div>
 

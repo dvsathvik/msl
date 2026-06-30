@@ -1,3 +1,4 @@
+import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -34,196 +35,10 @@ const Customization = () => {
 
   return (
     <>
-      <style>
-        {`
-          .industrial-grid {
-            background-image: 
-              linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-          }
-          .caution-stripe {
-            position: relative;
-            overflow: hidden;
-          }
-          
-          /* Staggered Hero Animations */
-          @keyframes fadeUpAnim {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .swiper-slide-active .hero-tag { animation: fadeUpAnim 0.6s ease forwards 0.2s; opacity: 0; }
-          .swiper-slide-active h1 { animation: fadeUpAnim 0.6s ease forwards 0.4s; opacity: 0; }
-          .swiper-slide-active p { animation: fadeUpAnim 0.6s ease forwards 0.6s; opacity: 0; }
-          .swiper-slide-active .hero-mini-features { animation: fadeUpAnim 0.6s ease forwards 0.8s; opacity: 0; }
-          .swiper-slide-active .hero-buttons { animation: fadeUpAnim 0.6s ease forwards 1.0s; opacity: 0; }
-
-          .msl-bg-navy { background-color: #1a2a4a; }
-          .msl-bg-gray { background-color: #f8fafc; }
-          .msl-navy { color: #1a2a4a; }
-          .msl-crimson { color: #c0001a; }
-          .msl-text-body { color: #4a5568; }
-
-          /* Override gradients from global CSS */
-          .hero-text h1 span.msl-solid-highlight {
-            background: none !important;
-            -webkit-text-fill-color: initial !important;
-            color: #c0001a !important;
-          }
-          
-          /* Removed .product-card-container in favor of global .msl-product-wrapper */
-
-          .rounded-image-wrapper {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            height: 100%;
-            min-height: 350px;
-          }
-          .rounded-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-          }
-          .rounded-image-wrapper:hover img {
-            transform: scale(1.05);
-          }
-
-          .p4-feature-card {
-            background: #fff;
-            border-radius: 20px;
-            padding: 35px 25px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            border: 1px solid #f1f5f9;
-            position: relative;
-            z-index: 1;
-          }
-          .p4-feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            border-color: transparent;
-          }
-          .p4-icon-box-inline {
-            color: #1a2a4a;
-            transition: all 0.4s ease;
-          }
-          .p4-feature-card:hover .p4-icon-box-inline {
-            background: #c0001a !important;
-            color: #fff !important;
-            transform: scale(1.1) rotate(5deg);
-          }
-
-          .breadcrumb-link {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.2s;
-          }
-          .breadcrumb-link:hover {
-            color: #ffffff;
-          }
-
-          .cta-section {
-            background: #1a2a4a;
-            color: #fff;
-            padding: 30px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            border-radius: 0 0 30px 30px;
-          }
-          .cta-btn-hover {
-            background: #c0001a;
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 12px;
-            font-weight: 800;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-block;
-          }
-          .cta-btn-hover:hover {
-            background: #fff;
-            color: #c0001a;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(192,0,26,0.3);
-          }
-          
-          /* Core Edge AI Enablement Styles */
-          .core-edge-card {
-            background: #1a2a4a;
-            border-radius: 24px;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-          }
-          .core-edge-card::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(192,0,26,0.15) 0%, transparent 60%);
-            z-index: 0;
-            pointer-events: none;
-          }
-          .core-edge-item {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-            transition: transform 0.3s ease;
-          }
-          .core-edge-item:hover {
-            transform: translateY(-10px);
-          }
-          .core-edge-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: #ff6b7a;
-            margin: 0 auto 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-          }
-          .core-edge-item:hover .core-edge-icon {
-            background: #c0001a;
-            color: #fff;
-            border-color: #c0001a;
-          }
-
-          .hero-image-panel img {
-            max-height: 380px !important;
-            object-fit: cover;
-            border-radius: 16px;
-          }
-        `}
-      </style>
-
       {/* Breadcrumb */}
-      <div style={{ background: '#1a2a4a', paddingTop: '75px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <span style={{ color: '#a0aec0', fontSize: '13px', fontFamily: 'Inter, sans-serif' }}>
-            <Link to="/" className="breadcrumb-link">Home</Link> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span>Products</span> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span style={{ color: '#ffffff', fontWeight: '500' }}>Customization</span>
-          </span>
-        </div>
-      </div>
+      <PageBreadcrumb productName="Customization" />
 
-      {/* Hero Slider */}
+{/* Hero Slider */}
       <section id="hero-slider" className="heroSwiper msl-bg-navy industrial-grid" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -260,7 +75,7 @@ const Customization = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/ai/cust_soc.png" alt="Face Analytics SoC" />
+                          <img src="/assets/img/ai/cust_soc.webp" alt="Face Analytics SoC" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -297,7 +112,7 @@ const Customization = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/ai/cust_drone.png" alt="Drone Vision" />
+                          <img src="/assets/img/ai/cust_drone.webp" alt="Drone Vision" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -334,7 +149,7 @@ const Customization = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/ai/cust_thermal.png" alt="Thermal Camera" />
+                          <img src="/assets/img/ai/cust_thermal.webp" alt="Thermal Camera" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -371,7 +186,7 @@ const Customization = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/ai/dehaze.png" alt="Dehaze" />
+                          <img src="/assets/img/ai/dehaze.webp" alt="Dehaze" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -530,7 +345,7 @@ const Customization = () => {
                   </div>
                   <div className="col-lg-6">
                     <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
-                      <img src="/assets/img/ai/edge_ai_dashboard.png" alt="Face Analytics Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img src="/assets/img/ai/edge_ai_dashboard.webp" alt="Face Analytics Dashboard" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   </div>
                 </div>
@@ -541,7 +356,7 @@ const Customization = () => {
                 <div className="row g-5 align-items-center">
                   <div className="col-lg-5 order-2 order-lg-1">
                     <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', background: '#f8fafc', border: '1px solid #e2e8f0', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <img src="/assets/img/ai/face_analytics_soc.png" alt="Broadcom SoC Platform" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
+                      <img src="/assets/img/ai/face_analytics_soc.webp" alt="Broadcom SoC Platform" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
                     </div>
                   </div>
                   <div className="col-lg-7 order-1 order-lg-2">
@@ -709,7 +524,7 @@ const Customization = () => {
                 <div className="row g-5 align-items-center">
                   <div className="col-lg-5">
                     <div className="rounded-image-wrapper">
-                      <img src="/assets/img/ai/ai_surveillance.png" alt="Aerial Intelligence" />
+                      <img src="/assets/img/ai/ai_surveillance.webp" alt="Aerial Intelligence" />
                     </div>
                   </div>
                   <div className="col-lg-7">
@@ -840,7 +655,7 @@ const Customization = () => {
               {/* Top Split: Image & Problem Statement */}
               <div className="row g-0">
                 <div className="col-lg-5" style={{ background: '#f8fafc', padding: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <img src="/assets/img/ai/thermal_camera.png" alt="Thermal Camera" style={{ maxWidth: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
+                  <img src="/assets/img/ai/thermal_camera.webp" alt="Thermal Camera" style={{ maxWidth: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }} />
                 </div>
                 <div className="col-lg-7" style={{ padding: '50px 40px', background: '#fff' }}>
                   <div className="mb-5">
@@ -980,7 +795,7 @@ const Customization = () => {
                   <div className="col-lg-6 text-center">
 
                     <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', background: '#000', display: 'inline-block', position: 'relative', width: '100%' }}>
-                      <img src="/assets/img/ai/dehaze_landscape.png" alt="Dehaze Split Demo" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }} />
+                      <img src="/assets/img/ai/dehaze_landscape.webp" alt="Dehaze Split Demo" style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'contain' }} />
                       <div style={{ position: 'absolute', top: '15px', left: '15px', background: 'rgba(0,0,0,0.7)', color: '#fff', padding: '5px 10px', borderRadius: '6px', fontSize: '11px', fontWeight: '700' }}>RAW (Unusable)</div>
                       <div style={{ position: 'absolute', top: '15px', right: '15px', background: 'rgba(192,0,26,0.9)', color: '#fff', padding: '5px 10px', borderRadius: '6px', fontSize: '11px', fontWeight: '700' }}>ENHANCED</div>
                     </div>
@@ -1106,7 +921,7 @@ const Customization = () => {
                 <div className="row g-5 align-items-center mb-5">
                   <div className="col-lg-6">
                     <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.1)' }}>
-                      <img src="/assets/img/manufacturing_automations/manufacturing_defect_qa.png" alt="Product Defect Detection" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img src="/assets/img/manufacturing_automations/manufacturing_defect_qa.webp" alt="Product Defect Detection" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   </div>
                   <div className="col-lg-6">

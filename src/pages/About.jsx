@@ -65,7 +65,7 @@ const About = () => {
                               border: '4px solid #f3f4f6'
                             }}>
                               <img 
-                                src="/assets/img/companies/founder_vijay_veera.png" 
+                                src="/assets/img/companies/founder_vijay_veera.webp" 
                                 alt="Vijay Veera" 
                                 style={{
                                   position: 'absolute',
@@ -88,7 +88,7 @@ const About = () => {
                               zIndex: 2
                             }}>
                               <img 
-                                src="/assets/img/companies/founder_vijay_veera.png" 
+                                src="/assets/img/companies/founder_vijay_veera.webp" 
                                 alt="Vijay Veera" 
                                 style={{
                                   position: 'absolute',

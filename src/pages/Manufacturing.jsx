@@ -1,3 +1,4 @@
+import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -37,202 +38,10 @@ const Manufacturing = () => {
 
   return (
     <>
-      <style>
-        {`
-          /* Strict overrides for this page to match brand guidelines */
-          .msl-crimson { color: #c0001a !important; }
-          .msl-navy { color: #1a2a4a !important; }
-          .msl-bg-navy { background-color: #1a2a4a; }
-          .msl-bg-gray { background-color: #f5f6f8 !important; }
-          .msl-text-body { color: #4a5568 !important; }
-          
-          /* Override gradients from global CSS */
-          .hero-text h1 span.msl-solid-highlight {
-            background: none !important;
-            -webkit-text-fill-color: initial !important;
-            color: #c0001a !important;
-          }
-          
-          /* Override primary button color */
-          .msl-btn-primary {
-            background: #c0001a !important;
-            border-color: #c0001a !important;
-            box-shadow: 0 4px 14px rgba(192, 0, 26, 0.2) !important;
-          }
-          .msl-btn-primary:hover {
-            background: #a00015 !important;
-            transform: scale(1.03) !important;
-            box-shadow: 0 6px 20px rgba(192, 0, 26, 0.3) !important;
-          }
-
-          .breadcrumb-link {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.2s;
-          }
-          .breadcrumb-link:hover {
-            color: #ffffff;
-          }
-
-          /* Title case enforcement */
-          .title-case {
-            text-transform: none !important;
-          }
-
-          /* Subtle lift on hover for cards */
-          .lift-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-          }
-          .lift-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08) !important;
-          }
-
-          /* IIoT Flowchart Styles */
-          .iiot-flow {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-          }
-          @media (min-width: 1200px) {
-            .iiot-flow {
-              flex-direction: row;
-              align-items: stretch;
-            }
-          }
-          .iiot-node {
-            flex: 1;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-          }
-          .iiot-node:hover {
-            transform: translateY(-5px);
-            border-color: #c0001a;
-          }
-          .iiot-node-header {
-            background: #1a2a4a;
-            color: #ffffff;
-            padding: 12px 10px;
-            text-align: center;
-            font-weight: 700;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-          }
-          .iiot-node-body {
-            padding: 15px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-          }
-          .iiot-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: left;
-            width: 100%;
-          }
-          .iiot-list li {
-            margin-bottom: 8px;
-            font-size: 13px;
-            color: #4a5568;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-          }
-          .iiot-list li i {
-            color: #c0001a;
-            margin-top: 3px;
-          }
-          .industry-card-footer {
-            background: #f8fafc;
-            border-top: 1px solid #e2e8f0;
-            padding: 15px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #1a2a4a;
-            text-align: center;
-            border-bottom-left-radius: 16px;
-            border-bottom-right-radius: 16px;
-          }
-          .iiot-node:hover {
-            transform: translateY(-5px);
-            border-color: #c0001a;
-            box-shadow: 0 0 15px rgba(192,0,26,0.3) !important;
-          }
-          
-          /* Industrial Grid Pattern */
-          .industrial-grid {
-            background-image: 
-              linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-          }
-
-          /* Caution Stripe Pattern */
-          .caution-stripe {
-            position: relative;
-            overflow: hidden;
-          }
-
-          /* Staggered Hero Animations */
-          @keyframes fadeUpAnim {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .swiper-slide-active .hero-tag { animation: fadeUpAnim 0.6s ease forwards 0.2s; opacity: 0; }
-          .swiper-slide-active h1 { animation: fadeUpAnim 0.6s ease forwards 0.4s; opacity: 0; }
-          .swiper-slide-active p { animation: fadeUpAnim 0.6s ease forwards 0.6s; opacity: 0; }
-          .swiper-slide-active .hero-mini-features { animation: fadeUpAnim 0.6s ease forwards 0.8s; opacity: 0; }
-          .swiper-slide-active .hero-buttons { animation: fadeUpAnim 0.6s ease forwards 1.0s; opacity: 0; }
-
-          /* Lift Control Panel Styles */
-          @keyframes blink {
-            0% { opacity: 1; box-shadow: 0 0 8px #10b981; }
-            50% { opacity: 0.4; box-shadow: 0 0 2px #10b981; }
-            100% { opacity: 1; box-shadow: 0 0 8px #10b981; }
-          }
-          .status-indicator {
-            width: 10px; height: 10px;
-            background: #10b981;
-            border-radius: 50%;
-            display: inline-block;
-            animation: blink 2s infinite ease-in-out;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-          }
-          .control-panel-card {
-            border-top: 4px solid #94a3b8 !important;
-            background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%) !important;
-            position: relative;
-          }
-          
-
-        `}
-      </style>
-
       {/* Breadcrumb */}
-      <div style={{ background: '#1a2a4a', paddingTop: '75px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <span style={{ color: '#a0aec0', fontSize: '13px', fontFamily: 'Inter, sans-serif' }}>
-            <Link to="/" className="breadcrumb-link">Home</Link> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span>Products</span> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span style={{ color: '#ffffff', fontWeight: '500' }}>Manufacturing Automations</span>
-          </span>
-        </div>
-      </div>
+      <PageBreadcrumb productName="Manufacturing Automations" />
 
-      {/* Hero Slider */}
+{/* Hero Slider */}
       <section id="hero-slider" className="heroSwiper msl-bg-navy industrial-grid" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -269,7 +78,7 @@ const Manufacturing = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/manufacturing_automations/mfg_iot.png" alt="Industrial IoT" />
+                          <img src="/assets/img/manufacturing_automations/mfg_iot.webp" alt="Industrial IoT" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -306,7 +115,7 @@ const Manufacturing = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/manufacturing_automations/mfg_safeload.png" alt="SafeLoad Telematics" />
+                          <img src="/assets/img/manufacturing_automations/mfg_safeload.webp" alt="SafeLoad Telematics" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -343,7 +152,7 @@ const Manufacturing = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/manufacturing_automations/mfg_diagnostics.png" alt="Lift Diagnostics" />
+                          <img src="/assets/img/manufacturing_automations/mfg_diagnostics.webp" alt="Lift Diagnostics" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -398,7 +207,7 @@ const Manufacturing = () => {
               <div className="row g-0">
                 {/* Left Column - Image */}
                 <div className="col-lg-6" style={{ minHeight: '400px' }}>
-                  <img src="/assets/img/manufacturing_automations/mfg-robot-arm.png" alt="Industrial IoT Automation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src="/assets/img/manufacturing_automations/mfg-robot-arm.webp" alt="Industrial IoT Automation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 
                 {/* Right Column - Content */}
@@ -692,7 +501,7 @@ const Manufacturing = () => {
                   <div className="row g-0 flex-lg-row-reverse">
                     {/* Image Column */}
                     <div className="col-lg-6" style={{ background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '400px', padding: '40px' }}>
-                      <img src="/assets/img/manufacturing_automations/esculator.png" alt="Escalator Failure Identification" style={{ width: '80%', height: 'auto', objectFit: 'contain', borderRadius: '24px' }} />
+                      <img src="/assets/img/manufacturing_automations/esculator.webp" alt="Escalator Failure Identification" style={{ width: '80%', height: 'auto', objectFit: 'contain', borderRadius: '24px' }} />
                     </div>
                     
                     {/* Right Column - Content */}

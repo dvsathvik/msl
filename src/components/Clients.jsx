@@ -2,11 +2,11 @@ import React from 'react';
 
 const Clients = () => {
   const logos = [
-    { src: '/assets/img/companies/LT_technology_service.png', height: '56px' },
-    { src: '/assets/img/companies/mirafra_technologies.png', height: '64px' },
-    { src: '/assets/img/companies/toyada-logo-dark.png', height: '72px' },
-    { src: '/assets/img/companies/ridenext_logo.png', height: '56px' },
-    { src: '/assets/img/companies/adroitec.png', height: '60px' },
+    { src: '/assets/img/companies/LT_technology_service.webp', height: '56px' },
+    { src: '/assets/img/companies/mirafra_technologies.webp', height: '64px' },
+    { src: '/assets/img/companies/toyada-logo-dark.webp', height: '72px' },
+    { src: '/assets/img/companies/ridenext_logo.webp', height: '56px' },
+    { src: '/assets/img/companies/adroitec.webp', height: '60px' },
   ];
 
   return (

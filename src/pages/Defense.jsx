@@ -1,3 +1,4 @@
+import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,10 +7,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import t90SliderImg from '../assets/slider/defence/tanks.png';
-import g3000SliderImg from '../assets/slider/defence/cockpit.png';
-import lockerSliderImg from '../assets/slider/defence/smart_locker_defense.png';
-import streamingSliderImg from '../assets/slider/defence/secure_comm.png';
+import t90SliderImg from '../assets/slider/defence/tanks.webp';
+import g3000SliderImg from '../assets/slider/defence/cockpit.webp';
+import lockerSliderImg from '../assets/slider/defence/smart_locker_defense.webp';
+import streamingSliderImg from '../assets/slider/defence/secure_comm.webp';
+import socSliderImg from '../assets/slider/defence/soc_modernization.png';
+import aiZoneSliderImg from '../assets/slider/defence/ai_zone.png';
 
 const Defense = () => {
   const { productId } = useParams();
@@ -19,6 +22,7 @@ const Defense = () => {
   const g3000Ref = useRef(null);
   const lockerRef = useRef(null);
   const videoRef = useRef(null);
+  const socModernizationRef = useRef(null);
 
   useEffect(() => {
     if (productId === 't90' && t90Ref.current) {
@@ -29,6 +33,8 @@ const Defense = () => {
       lockerRef.current.scrollIntoView({ behavior: 'smooth' });
     } else if (productId === 'video' && videoRef.current) {
       videoRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else if (productId === 'soc-modernization' && socModernizationRef.current) {
+      socModernizationRef.current.scrollIntoView({ behavior: 'smooth' });
     } else {
       window.scrollTo(0, 0);
     }
@@ -36,99 +42,10 @@ const Defense = () => {
 
   return (
     <>
-      <style>
-        {`
-          .industrial-grid {
-            background-image: 
-              linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-          }
-          .caution-stripe {
-            position: relative;
-            overflow: hidden;
-          }
-          
-          /* Staggered Hero Animations */
-          @keyframes fadeUpAnim {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .swiper-slide-active .hero-tag { animation: fadeUpAnim 0.6s ease forwards 0.2s; opacity: 0; }
-          .swiper-slide-active h1 { animation: fadeUpAnim 0.6s ease forwards 0.4s; opacity: 0; }
-          .swiper-slide-active p { animation: fadeUpAnim 0.6s ease forwards 0.6s; opacity: 0; }
-          .swiper-slide-active .hero-mini-features { animation: fadeUpAnim 0.6s ease forwards 0.8s; opacity: 0; }
-          .swiper-slide-active .hero-buttons { animation: fadeUpAnim 0.6s ease forwards 1.0s; opacity: 0; }
-
-          .msl-bg-navy { background-color: #1a2a4a; }
-          .msl-bg-gray { background-color: #f8fafc; }
-          .msl-navy { color: #1a2a4a; }
-          .msl-crimson { color: #c0001a; }
-          .msl-text-body { color: #4a5568; }
-
-          /* Override gradients from global CSS */
-          .hero-text h1 span.msl-solid-highlight {
-            background: none !important;
-            -webkit-text-fill-color: initial !important;
-            color: #c0001a !important;
-          }
-          
-          .ai-feature-card {
-            background: #fff;
-            padding: 30px 25px;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-          }
-          .ai-feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-          }
-          .ai-tag {
-            background: rgba(192,0,26,0.1);
-            color: #c0001a;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 20px;
-          }
-          .breadcrumb-link {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.2s;
-          }
-          .breadcrumb-link:hover {
-            color: #ffffff;
-          }
-          .hover-scale:hover {
-            transform: scale(1.05);
-          }
-          .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            border-color: #FF4D4D !important;
-          }
-        `}
-      </style>
-
       {/* Breadcrumb */}
-      <div style={{ background: '#1a2a4a', paddingTop: '75px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <span style={{ color: '#a0aec0', fontSize: '13px', fontFamily: 'Inter, sans-serif' }}>
-            <Link to="/" className="breadcrumb-link">Home</Link> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span>Products</span> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span style={{ color: '#ffffff', fontWeight: '500' }}>Defense</span>
-          </span>
-        </div>
-      </div>
+      <PageBreadcrumb productName="Defense" />
 
-      {/* Hero Slider */}
+{/* Hero Slider */}
       <section id="hero-slider" className="heroSwiper msl-bg-navy industrial-grid" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -289,6 +206,85 @@ const Defense = () => {
               </div>
             </div>
           </SwiperSlide>
+
+          {/* Slide 5 - SOC Modernization */}
+          <SwiperSlide>
+            <div className="slider-redesign">
+              <div className="slider-wrap">
+                <div className="stage">
+                  <div className="card">
+                    <div className="card-grid">
+                      <div className="text-col">
+                        <span className="tag">HARDWARE &bull; ENGINEERING</span>
+                        <h1>Legacy to Latest<br/><span>SOC Modernization</span></h1>
+                        <p className="subtext">Upgrading legacy defense chips to high-performance multi-core SOCs</p>
+                        <div className="cap-grid">
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-microchip"></i></span><span className="cap-label">Multi-Core</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-code-alt"></i></span><span className="cap-label">C/C++ Porting</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-tachometer"></i></span><span className="cap-label">High Speed</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-check-shield"></i></span><span className="cap-label">Validated</span></div>
+                        </div>
+                        <div className="cta-row">
+                          <a href="#soc-modernization" onClick={(e) => { e.preventDefault(); socModernizationRef.current?.scrollIntoView({ behavior: 'smooth' }); }} className="btn btn-primary">Explore Solution <i className="bx bx-right-arrow-alt"></i></a>
+                        </div>
+                      </div>
+                      <div className="image-col">
+                        <div className="image-panel">
+                          <img src={socSliderImg} alt="SOC Modernization" />
+                        </div>
+                        <div className="spec-chip">
+                          <div className="spec-label">Key Differentiator</div>
+                          <div className="spec-value">Optimized Multi-Core Architecture</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
+          {/* Slide 6 - AI Secured Zones */}
+          <SwiperSlide>
+            <div className="slider-redesign">
+              <div className="slider-wrap">
+                <div className="stage">
+                  <div className="card">
+                    <div className="card-grid">
+                      <div className="text-col">
+                        <span className="tag">AI &bull; SURVEILLANCE</span>
+                        <h1>AI Secured Zones<br/><span>Monitoring System</span></h1>
+                        <p className="subtext">Proactive defense with intelligent threat identification</p>
+                        <div className="cap-grid">
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-cctv"></i></span><span className="cap-label">Vision AI</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-user-x"></i></span><span className="cap-label">Intruder Alert</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-bell-plus"></i></span><span className="cap-label">Proactive</span></div>
+                          <div className="cap-item"><span className="cap-icon"><i className="bx bx-layer"></i></span><span className="cap-label">Dashboard</span></div>
+                        </div>
+                        <div className="cta-row">
+                          <a href="#ai-zones" onClick={(e) => { 
+                            e.preventDefault(); 
+                            // Since we didn't add a ref for ai zones earlier, let's just scroll to the section ID.
+                            document.getElementById('ai-zones')?.scrollIntoView({ behavior: 'smooth' }); 
+                          }} className="btn btn-primary">Explore Solution <i className="bx bx-right-arrow-alt"></i></a>
+                        </div>
+                      </div>
+                      <div className="image-col">
+                        <div className="image-panel">
+                          <img src={aiZoneSliderImg} alt="AI Secured Zones" />
+                        </div>
+                        <div className="spec-chip">
+                          <div className="spec-label">Key Differentiator</div>
+                          <div className="spec-value">Preemptive Threat Neutralization</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+
           <div className="hero-controls-wrapper">
             <div className="hero-pagination" style={{ '--swiper-pagination-color': '#c0001a' }}></div>
             <div className="hero-navigation">
@@ -349,7 +345,7 @@ const Defense = () => {
                   </div>
                   <div className="col-lg-6">
                     <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
-                      <img src="/assets/img/defense/def_t90.png" alt="Tactical Communication" style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img src="/assets/img/defense/def_t90.webp" alt="Tactical Communication" style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   </div>
                 </div>
@@ -361,7 +357,7 @@ const Defense = () => {
                 <div className="row g-5 align-items-center">
                   <div className="col-lg-5 order-2 order-lg-1">
                     <div style={{ position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', background: '#f8fafc', border: '1px solid #e2e8f0' }}>
-                      <img src="/assets/img/defense/tankers.png" alt="Tank Network Architecture" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
+                      <img src="/assets/img/defense/t90_tanks_monitor.webp" alt="Tank Network Architecture" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px' }} />
                     </div>
                   </div>
                   <div className="col-lg-7 order-1 order-lg-2">
@@ -533,8 +529,8 @@ const Defense = () => {
                       <i className="bx bx-paper-plane"></i> AVIONICS
                     </div>
                     {/* Dark theme red heading */}
-                    <h3 style={{ color: '#C0001A', fontSize: '34px', fontWeight: '800', marginBottom: '20px', lineHeight: '1.2' }}>
-                      At 30,000 Feet, There Is Zero Room For Error.
+                    <h3 className="msl-navy" style={{ fontSize: '34px', fontWeight: '800', marginBottom: '20px', lineHeight: '1.2' }}>
+                      Uncompromising Avionics Precision. <span style={{ color: '#C0001A' }}>Zero Room For Error.</span>
                     </h3>
                     <p style={{ fontSize: '15px', lineHeight: '1.7', marginBottom: '30px', color: '#4a5568' }}>
                       The <strong>G3000 Cockpit Monitor</strong> processes thousands of data points instantly. It acts as the central visualization platform, providing pilots with critical, real-time flight metrics and aircraft health data to ensure absolute situational awareness.
@@ -554,7 +550,7 @@ const Defense = () => {
                   <div className="col-lg-6">
                     {/* G3000 Cockpit Image */}
                     <div style={{ position: 'relative' }}>
-                      <img src="/assets/img/defense/g3000_cockpit.png" alt="G3000 Monitor" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', border: '1px solid #e2e8f0' }} />
+                      <img src="/assets/img/defense/g3000_cockpit.webp" alt="G3000 Monitor" style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '16px', boxShadow: '0 15px 35px rgba(0,0,0,0.1)', border: '1px solid #e2e8f0' }} />
                     </div>
                   </div>
                 </div>
@@ -705,8 +701,8 @@ const Defense = () => {
                   </div>
                   
                   {/* Cheesy Line */}
-                  <h3 style={{ color: '#C0001A', fontSize: '36px', fontWeight: '800', marginBottom: '20px', lineHeight: '1.2' }}>
-                    Lock Down the Unthinkable. Because Physical Keys Are For Amateurs.
+                  <h3 className="msl-navy" style={{ fontSize: '36px', fontWeight: '800', marginBottom: '20px', lineHeight: '1.2' }}>
+                    Lock Down the Unthinkable. <span style={{ color: '#C0001A' }}>Because Physical Keys Are For Amateurs.</span>
                   </h3>
                   
                   {/* Introduction */}
@@ -727,7 +723,7 @@ const Defense = () => {
 
                 <div className="col-lg-5" style={{ background: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '40px' }}>
                   {/* Vertical Image */}
-                  <img src="/assets/img/defense/smart_locker.png" alt="Smart AI Locker" style={{ width: '100%', maxWidth: '350px', height: 'auto', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', border: '1px solid rgba(0,0,0,0.05)' }} />
+                  <img src="/assets/img/defense/smart_locker.webp" alt="Smart AI Locker" style={{ width: '100%', maxWidth: '350px', height: 'auto', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.15)', border: '1px solid rgba(0,0,0,0.05)' }} />
                 </div>
               </div>
 
@@ -968,8 +964,8 @@ const Defense = () => {
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#1a2a4a', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '25px' }}>
                     <i className="bx bx-broadcast"></i> TACTICAL COMMS
                   </div>
-                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>
-                    Beyond Line-of-Sight Connectivity
+                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '20px', lineHeight: '1.2' }}>
+                    Beyond Line-of-Sight Connectivity. <span style={{ color: '#C0001A' }}>Unbreakable Comms.</span>
                   </h3>
                   <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.7', marginBottom: '30px' }}>
                     Modern military missions and industrial operations increasingly depend on real-time communication. Our rugged platform provides real-time encrypted video, voice, and situational awareness across challenging environments where conventional communication infrastructure is unavailable or unreliable.
@@ -986,10 +982,10 @@ const Defense = () => {
                   </div>
                 </div>
                 
-                <div className="col-lg-6" style={{ position: 'relative', minHeight: '400px', background: 'url(/assets/img/defense/relay_system_bg.png) center/cover' }}>
+                <div className="col-lg-6" style={{ position: 'relative', minHeight: '400px', background: 'url(/assets/img/defense/relay_system_bg.webp) center/cover' }}>
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%)' }}></div>
                   <div style={{ position: 'absolute', bottom: '30px', right: '30px', background: 'rgba(26,42,74,0.9)', padding: '20px', borderRadius: '12px', backdropFilter: 'blur(10px)', color: '#fff', maxWidth: '300px', border: '1px solid rgba(255,255,255,0.1)' }}>
-                    <h6 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Our Solution</h6>
+                    <h6 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '10px', color: '#fff' }}>Our Solution</h6>
                     <p style={{ fontSize: '13px', margin: 0, color: '#cbd5e1', lineHeight: '1.5' }}>
                       A resilient, self-forming wireless mesh network. Each relay node intelligently receives, encrypts, and forwards the data—extending coverage far beyond traditional limits.
                     </p>
@@ -1033,7 +1029,7 @@ const Defense = () => {
 
                 <div style={{ background: 'rgba(0,0,0,0.2)', padding: '40px', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
                   <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: '700', marginBottom: '25px' }}>Mesh Network Topography</h4>
-                  <img src="/assets/img/defense/relay_system_user.png" alt="Mesh Network Nodes Diagram" style={{ width: '100%', borderRadius: '12px', border: '2px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }} />
+                  <img src="/assets/img/defense/relay_system_user.webp" alt="Mesh Network Nodes Diagram" style={{ width: '100%', borderRadius: '12px', border: '2px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }} />
                 </div>
               </div>
 
@@ -1111,6 +1107,326 @@ const Defense = () => {
                 <div style={{ flex: '0 0 auto' }}>
                   <a href="#contact" style={{ display: 'inline-block', background: '#C0001A', color: '#fff', padding: '14px 30px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '15px', textTransform: 'uppercase', boxShadow: '0 4px 15px rgba(192,0,26,0.3)' }} className="hover-scale">
                     Request Secure Demo <i className="bx bx-right-arrow-alt" style={{ verticalAlign: 'middle', fontSize: '20px', marginLeft: '5px' }}></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================
+            PRODUCT 5: SOC Modernization
+        ========================================= */}
+        <section id="soc-modernization" ref={socModernizationRef} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
+          
+          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '40px' }}>
+            <div className="container text-center position-relative" style={{ zIndex: 1 }}>
+              <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px', marginBottom: '20px' }}>
+                Product 05
+              </span>
+              <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
+                Legacy to Latest SOC Modernization
+              </h2>
+              <p style={{ color: '#cbd5e1', fontSize: '18px', maxWidth: '800px', margin: '0 auto', fontWeight: '300' }}>
+                <strong style={{color: '#fff', fontWeight: '600'}}>Modernizing Legacy. Powering the Future.</strong><br/>
+                Involved in defence based product in assembly programming to latest trend of SOCs.
+              </p>
+            </div>
+          </div>
+
+          <div className="container" data-aos="fade-up">
+            <div style={{ background: '#fff', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+              
+              {/* Top Section: Intro & Problem */}
+              <div className="row g-0">
+                <div className="col-lg-6" style={{ padding: '50px 40px', background: '#fff' }}>
+                  <a href="#contact" style={{ display: 'inline-block', background: '#C0001A', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '25px', textDecoration: 'none' }}>
+                    <i className="bx bx-chip"></i> UPGRADE YOUR TECH ARSENAL TODAY!
+                  </a>
+                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>
+                    Overcoming the Legacy <span style={{color: '#C0001A'}}>Bottleneck</span>
+                  </h3>
+                  <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.7', marginBottom: '30px' }}>
+                    The world is moving forward, but many critical defense systems remain trapped in old-fashioned, legacy technologies like early generation DSPs with limited memory and performance. We upgrade these legacy defense chips to high-performance multi-core SOCs, bringing modern capabilities to your defense infrastructure.
+                  </p>
+                  
+                  <div style={{ background: '#f8fafc', borderLeft: '4px solid #c0001a', padding: '25px', borderRadius: '0 8px 8px 0', boxShadow: 'inset 2px 0 0 rgba(192,0,26,0.1)' }}>
+                    <h6 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '16px', marginBottom: '15px' }}>The Problem with Legacy Platforms</h6>
+                    <ul style={{ paddingLeft: '20px', color: '#4a5568', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                      <li style={{ marginBottom: '8px' }}><strong>Outdated Tech:</strong> Relying on rigid Assembly/C code and fixed-point arithmetic.</li>
+                      <li style={{ marginBottom: '8px' }}><strong>Limited Resources:</strong> Severe constraints on memory and overall performance capabilities.</li>
+                      <li style={{ marginBottom: '8px' }}><strong>Obsolete Comms:</strong> Stuck with inefficient point-to-point communication and legacy peripherals.</li>
+                      <li><strong>Maintenance Risks:</strong> Escalating costs and difficulty in sourcing outdated components.</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="col-lg-6">
+                  <div style={{ height: '100%', minHeight: '400px', backgroundImage: 'url(/assets/img/defense/defense_soc_modernization.png)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%)' }}></div>
+                    <div style={{ position: 'absolute', bottom: '30px', right: '30px', background: 'rgba(26,42,74,0.95)', padding: '20px', borderRadius: '12px', backdropFilter: 'blur(10px)', color: '#fff', maxWidth: '320px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <h6 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '10px', color: '#fff' }}>Porting & Modernization</h6>
+                      <p style={{ fontSize: '13px', margin: 0, color: '#cbd5e1', lineHeight: '1.5' }}>
+                        Seamlessly migrating from Assembly/C to Optimized C/C++, adapting architectures (memory, peripherals), and rigorously validating the new SOC setup.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Middle Section: Our Solution */}
+              <div style={{ padding: '50px 40px', background: '#f8fafc', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+                <div className="row g-5 align-items-center">
+                  <div className="col-lg-6 order-2 order-lg-1">
+                    <img src="/assets/img/defense/defense_soc_capabilities_v3.webp" alt="Defense Capabilities" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }} />
+                  </div>
+                  <div className="col-lg-6 order-1 order-lg-2">
+                    <span style={{ color: '#C0001A', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '12px', display: 'block', marginBottom: '10px' }}>Our Solution</span>
+                    <h4 style={{ color: '#1A2A4A', fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>Latest SOC & MPU Platforms</h4>
+                    <p style={{ color: '#4A5568', fontSize: '15px', lineHeight: '1.6', marginBottom: '25px' }}>
+                      We transition your systems to modern, high-performance multi-core SOCs equipped with advanced peripherals. From Avionics and Weapon Control to Surveillance Systems, we provide the computational backbone for next-generation defense.
+                    </p>
+                    
+                    <div className="row g-4">
+                      <div className="col-sm-6">
+                        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
+                          <i className="bx bx-network-chart" style={{ fontSize: '32px', color: '#C0001A', marginBottom: '15px' }}></i>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>High Speed Connectivity</h6>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Support for ETH, CAN FD, ARINC, and PCIe for massive data throughput.</p>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
+                          <i className="bx bx-check-shield" style={{ fontSize: '32px', color: '#C0001A', marginBottom: '15px' }}></i>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Enhanced Reliability</h6>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Scalable, future-ready architecture with top-tier security & fault tolerance.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Section: MicroSysLogic Capabilities & Benefits */}
+              <div style={{ padding: '50px 40px', background: '#fff' }}>
+                <h4 style={{ color: '#1a2a4a', fontSize: '24px', fontWeight: '800', marginBottom: '30px', textAlign: 'center' }}>MicroSysLogic Capabilities</h4>
+                
+                <div className="row g-4 mb-5">
+                  {[
+                    { icon: 'bx-code-alt', title: 'Assembly Expertise', desc: 'Deep expertise in low-level code optimization and processor utilization.' },
+                    { icon: 'bx-cog', title: 'OS Integration', desc: 'Seamless RTOS/Linux integration with drivers & middleware.' },
+                    { icon: 'bx-task', title: 'Task Planning', desc: 'Detailed tracking of module-wise tasks for efficient delivery.' },
+                    { icon: 'bx-line-chart', title: 'Performance Analysis', desc: 'In-depth analysis of CPU load, memory, and real-time latency.' },
+                    { icon: 'bx-test-tube', title: 'Test Automation', desc: 'Automation of unit, integration, and HIL system tests.' },
+                    { icon: 'bx-table', title: 'Traceability Matrix', desc: 'End-to-end requirement traceability for compliance.' }
+                  ].map((cap, idx) => (
+                    <div className="col-lg-4 col-md-6" key={idx}>
+                      <div style={{ padding: '20px', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', gap: '15px', height: '100%' }}>
+                        <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(192,0,26,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <i className={`bx ${cap.icon}`} style={{ fontSize: '20px', color: '#C0001A' }}></i>
+                        </div>
+                        <div>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>{cap.title}</h6>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>{cap.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{ background: '#1a2a4a', padding: '30px', borderRadius: '16px' }}>
+                  <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: '800', marginBottom: '25px', textAlign: 'center' }}>Key Benefits</h4>
+                  <div className="row text-center g-3">
+                    {["Improved Performance", "Reduced Power Consumption", "Modern Architecture", "Enhanced Safety", "Long Term Maintainability", "Future Scalability"].map((benefit, idx) => (
+                      <div className="col-md-4 col-sm-6" key={idx}>
+                        <div style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>
+                          <i className="bx bx-check-circle" style={{ color: '#34D399', marginRight: '8px' }}></i>
+                          {benefit}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom CTA */}
+              <div style={{ background: '#f8fafc', padding: '30px 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ marginBottom: '15px', flex: '1 1 300px' }}>
+                  <h6 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', marginBottom: '5px' }}>Modernize your defense technology stack.</h6>
+                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0, fontWeight: '500' }}>Future-proof your avionics, radars, and mission computers with advanced SOC platforms.</p>
+                </div>
+                <div style={{ flex: '0 0 auto' }}>
+                  <a href="#contact" style={{ display: 'inline-block', background: '#C0001A', color: '#fff', padding: '14px 30px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '15px', textTransform: 'uppercase', boxShadow: '0 4px 15px rgba(192,0,26,0.3)' }} className="hover-scale">
+                    Upgrade Systems Now <i className="bx bx-rocket" style={{ verticalAlign: 'middle', fontSize: '20px', marginLeft: '5px' }}></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================
+            PRODUCT 6: AI Secured Zones Monitoring System
+        ========================================= */}
+        {/* =========================================
+            PRODUCT 6: AI Secured Zones Monitoring System
+        ========================================= */}
+        <section id="ai-security" style={{ background: '#f8fafc', paddingBottom: '60px' }}>
+          
+          <div className="caution-stripe msl-bg-navy" style={{ padding: '60px 0', borderBottom: '4px solid #c0001a', marginBottom: '40px' }}>
+            <div className="container text-center position-relative" style={{ zIndex: 1 }}>
+              <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.1)', color: '#fff', fontSize: '12px', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase', padding: '6px 16px', borderRadius: '30px', marginBottom: '20px' }}>
+                Product 06
+              </span>
+              <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
+                AI Secured Zones Monitoring System
+              </h2>
+              <p style={{ color: '#cbd5e1', fontSize: '18px', maxWidth: '800px', margin: '0 auto', fontWeight: '300' }}>
+                <strong style={{color: '#fff', fontWeight: '600'}}>Keep Unauthorized Individuals Out.</strong><br/>
+                AI-powered security cameras for early alerts, rapid identification, and proactive defense.
+              </p>
+            </div>
+          </div>
+
+          <div className="container" data-aos="fade-up">
+            <div style={{ background: '#fff', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.04)' }}>
+              
+              {/* Top Section: Intro & Problem */}
+              <div className="row g-0">
+                <div className="col-lg-6" style={{ padding: '50px 40px', background: '#fff' }}>
+                  <a href="#contact" style={{ display: 'inline-block', background: '#C0001A', color: '#fff', padding: '6px 16px', borderRadius: '20px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '25px', textDecoration: 'none' }}>
+                    <i className="bx bx-shield-quarter"></i> Uncompromising Security. Zero Unauthorized Access.
+                  </a>
+                  <h3 className="msl-navy" style={{ fontSize: '28px', fontWeight: '800', marginBottom: '20px', lineHeight: '1.2' }}>
+                    Don't Just Record Incidents. <span style={{ color: '#C0001A' }}>Prevent Them Entirely.</span>
+                  </h3>
+                  <p className="msl-text-body" style={{ fontSize: '15px', lineHeight: '1.7', marginBottom: '30px' }}>
+                    Conventional camera security systems can detect people but often lack advanced intelligence for fast decision-making. Existing systems struggle to accurately identify unauthorized individuals from previously recorded data.
+                  </p>
+                  
+                  <div style={{ background: '#f8fafc', borderLeft: '4px solid #c0001a', padding: '25px', borderRadius: '0 8px 8px 0', boxShadow: 'inset 2px 0 0 rgba(192,0,26,0.1)' }}>
+                    <h6 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '16px', marginBottom: '15px' }}>The Problem</h6>
+                    <ul style={{ paddingLeft: '20px', color: '#4a5568', fontSize: '14px', lineHeight: '1.6', margin: 0 }}>
+                      <li style={{ marginBottom: '8px' }}><strong>Delayed Identification:</strong> Reduces response effectiveness in sensitive zones.</li>
+                      <li style={{ marginBottom: '8px' }}><strong>Dumb Cameras:</strong> Can only record, unable to automatically cross-check databases.</li>
+                      <li><strong>Manual Monitoring:</strong> Relies heavily on human operators, leading to fatigue and errors.</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="col-lg-6">
+                  <div style={{ height: '100%', minHeight: '400px', backgroundImage: 'url(/assets/img/defense/defense_ai_security_v2.webp)', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}>
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 30%)' }}></div>
+                    <div style={{ position: 'absolute', bottom: '30px', right: '30px', background: 'rgba(26,42,74,0.95)', padding: '20px', borderRadius: '12px', backdropFilter: 'blur(10px)', color: '#fff', maxWidth: '320px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <h6 style={{ fontWeight: '700', fontSize: '15px', marginBottom: '10px', color: '#fff' }}>Our Solution</h6>
+                      <p style={{ fontSize: '13px', margin: 0, color: '#cbd5e1', lineHeight: '1.5' }}>
+                        AI-powered security solution that identifies unauthorized individuals, cross-checks records, and delivers early alerts for rapid action. Works seamlessly with your existing cameras.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Middle Section: Architecture & Features */}
+              <div style={{ padding: '50px 40px', background: '#f8fafc', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+                <div className="row g-5 align-items-center">
+                  <div className="col-lg-6 order-2 order-lg-1">
+                    <img src="/assets/img/defense/defense_ai_dashboard.webp" alt="AI Security Dashboard" style={{ width: '100%', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }} />
+                  </div>
+                  <div className="col-lg-6 order-1 order-lg-2">
+                    <span style={{ color: '#C0001A', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase', fontSize: '12px', display: 'block', marginBottom: '10px' }}>Technology Used</span>
+                    <h4 style={{ color: '#1A2A4A', fontSize: '28px', fontWeight: '800', marginBottom: '20px' }}>Advanced Intelligence Core</h4>
+                    <p style={{ color: '#4A5568', fontSize: '15px', lineHeight: '1.6', marginBottom: '25px' }}>
+                      Our proprietary AI algorithms and search engine power the intelligence behind the cameras. We integrate IoT cloud systems, audio analytics, and a comprehensive application platform to provide full situational awareness.
+                    </p>
+                    
+                    <div className="row g-4">
+                      <div className="col-sm-6">
+                        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
+                          <i className="bx bx-scan" style={{ fontSize: '32px', color: '#C0001A', marginBottom: '15px' }}></i>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Capture & Detect</h6>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>AI camera captures and tracks people in real time.</p>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
+                          <i className="bx bx-brain" style={{ fontSize: '32px', color: '#C0001A', marginBottom: '15px' }}></i>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>AI Recognition</h6>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Cross-check with authorized & unauthorized databases.</p>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
+                          <i className="bx bx-bell" style={{ fontSize: '32px', color: '#C0001A', marginBottom: '15px' }}></i>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Decision & Alert</h6>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Identify status and generate early alerts.</p>
+                        </div>
+                      </div>
+                      <div className="col-sm-6">
+                        <div style={{ background: '#fff', padding: '20px', borderRadius: '12px', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', height: '100%' }}>
+                          <i className="bx bx-building" style={{ fontSize: '32px', color: '#C0001A', marginBottom: '15px' }}></i>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '10px' }}>Target Applications</h6>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>Defence facilities, traffic zones, and high-security offices.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Section: MicroSysLogic Capabilities & Benefits */}
+              <div style={{ padding: '50px 40px', background: '#fff' }}>
+                <h4 style={{ color: '#1a2a4a', fontSize: '24px', fontWeight: '800', marginBottom: '30px', textAlign: 'center' }}>MicroSysLogic Product Development</h4>
+                
+                <div className="row g-4 mb-5">
+                  {[
+                    { icon: 'bx-cctv', title: 'IP Camera Design', desc: 'Complete design of new IP Camera hardware and systems.' },
+                    { icon: 'bx-data', title: 'Data Conversion', desc: 'Convert raw sensor data into structured IP data formats.' },
+                    { icon: 'bx-server', title: 'Secure Local Server', desc: 'Push data to local Linux server for absolute high security.' },
+                    { icon: 'bx-line-chart', title: 'Data Analysis', desc: 'Analyze data streams from all connected camera sensors.' },
+                    { icon: 'bx-user-check', title: 'Member Identification', desc: 'Identify authorized and unauthorized members instantly.' },
+                    { icon: 'bx-desktop', title: 'GUI Dashboard', desc: 'Created custom GUI Dashboard to visualize threats and alerts.' }
+                  ].map((cap, idx) => (
+                    <div className="col-lg-4 col-md-6" key={idx}>
+                      <div style={{ padding: '20px', background: '#f8fafc', borderRadius: '12px', border: '1px solid #e2e8f0', display: 'flex', gap: '15px', height: '100%' }}>
+                        <div style={{ width: '40px', height: '40px', borderRadius: '8px', background: 'rgba(192,0,26,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                          <i className={`bx ${cap.icon}`} style={{ fontSize: '20px', color: '#C0001A' }}></i>
+                        </div>
+                        <div>
+                          <h6 style={{ color: '#1a2a4a', fontWeight: '700', fontSize: '15px', marginBottom: '5px' }}>{cap.title}</h6>
+                          <p style={{ color: '#64748b', fontSize: '13px', margin: 0 }}>{cap.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{ background: '#1a2a4a', padding: '30px', borderRadius: '16px' }}>
+                  <h4 style={{ color: '#fff', fontSize: '20px', fontWeight: '800', marginBottom: '25px', textAlign: 'center' }}>Key Benefits</h4>
+                  <div className="row text-center g-3">
+                    {["Early Warning", "Rapid Identification", "Works with Existing Cameras", "Improved Security Response", "State-of-the-art Process", "Cross-check Databases"].map((benefit, idx) => (
+                      <div className="col-md-4 col-sm-6" key={idx}>
+                        <div style={{ color: '#fff', fontSize: '15px', fontWeight: '600' }}>
+                          <i className="bx bx-check-circle" style={{ color: '#34D399', marginRight: '8px' }}></i>
+                          {benefit}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom CTA */}
+              <div style={{ background: '#f8fafc', padding: '30px 40px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #e2e8f0' }}>
+                <div style={{ marginBottom: '15px', flex: '1 1 300px' }}>
+                  <h6 style={{ color: '#1a2a4a', fontWeight: '800', fontSize: '18px', marginBottom: '5px' }}>Secure your restricted zones today.</h6>
+                  <p style={{ fontSize: '14px', color: '#4a5568', margin: 0, fontWeight: '500' }}>Implement AI-powered early warnings and rapid identification.</p>
+                </div>
+                <div style={{ flex: '0 0 auto' }}>
+                  <a href="#contact" style={{ display: 'inline-block', background: '#C0001A', color: '#fff', padding: '14px 30px', borderRadius: '8px', fontWeight: '700', textDecoration: 'none', fontSize: '15px', textTransform: 'uppercase', boxShadow: '0 4px 15px rgba(192,0,26,0.3)' }} className="hover-scale">
+                    Get Protected <i className="bx bx-shield" style={{ verticalAlign: 'middle', fontSize: '20px', marginLeft: '5px' }}></i>
                   </a>
                 </div>
               </div>

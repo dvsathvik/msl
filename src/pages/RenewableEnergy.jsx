@@ -1,3 +1,4 @@
+import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -22,127 +23,10 @@ const RenewableEnergy = () => {
 
   return (
     <>
-      <style>
-        {`
-          .industrial-grid {
-            background-image: 
-              linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-          }
-          .caution-stripe {
-            position: relative;
-            overflow: hidden;
-          }
-          
-          /* Staggered Hero Animations */
-          @keyframes fadeUpAnim {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .swiper-slide-active .hero-tag { animation: fadeUpAnim 0.6s ease forwards 0.2s; opacity: 0; }
-          .swiper-slide-active h1 { animation: fadeUpAnim 0.6s ease forwards 0.4s; opacity: 0; }
-          .swiper-slide-active p { animation: fadeUpAnim 0.6s ease forwards 0.6s; opacity: 0; }
-          .swiper-slide-active .hero-mini-features { animation: fadeUpAnim 0.6s ease forwards 0.8s; opacity: 0; }
-          .swiper-slide-active .hero-buttons { animation: fadeUpAnim 0.6s ease forwards 1.0s; opacity: 0; }
-
-          .msl-bg-navy { background-color: #1a2a4a; }
-          .msl-bg-gray { background-color: #f8fafc; }
-          .msl-navy { color: #1a2a4a; }
-          .msl-crimson { color: #c0001a; }
-          .msl-text-body { color: #4a5568; }
-
-          /* Override gradients from global CSS */
-          .hero-text h1 span.msl-solid-highlight {
-            background: none !important;
-            -webkit-text-fill-color: initial !important;
-            color: #c0001a !important;
-          }
-          
-          .ai-feature-card {
-            background: #fff;
-            padding: 30px 25px;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-          }
-          .ai-feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            border-color: #c0001a;
-          }
-          .ai-tag {
-            background: rgba(192,0,26,0.1);
-            color: #c0001a;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 20px;
-          }
-          .breadcrumb-link {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.2s;
-          }
-          .breadcrumb-link:hover {
-            color: #ffffff;
-          }
-          
-          .solar-image-wrapper {
-            position: relative;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border: 1px solid rgba(0,0,0,0.05);
-          }
-          .solar-image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-          }
-          .solar-image-wrapper:hover img {
-            transform: scale(1.05);
-          }
-          .solar-overlay-card {
-            position: absolute;
-            bottom: -20px;
-            right: 20px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-left: 4px solid #c0001a;
-            max-width: 250px;
-            z-index: 2;
-          }
-          
-          .msl-btn-hover-lift:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(192,0,26,0.4);
-            border-color: #fff !important;
-          }
-        `}
-      </style>
-
       {/* Breadcrumb */}
-      <div style={{ background: '#1a2a4a', paddingTop: '75px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <span style={{ color: '#a0aec0', fontSize: '13px', fontFamily: 'Inter, sans-serif' }}>
-            <Link to="/" className="breadcrumb-link">Home</Link> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span>Products</span> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span style={{ color: '#ffffff', fontWeight: '500' }}>Renewable Energy</span>
-          </span>
-        </div>
-      </div>
+      <PageBreadcrumb productName="Renewable Energy" />
 
-      {/* Hero Slider */}
+{/* Hero Slider */}
       <section id="hero-slider" className="heroSwiper msl-bg-navy industrial-grid" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -180,7 +64,7 @@ const RenewableEnergy = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/renewable_energy/ren_solar.png" alt="Smart Solar Energy" />
+                          <img src="/assets/img/renewable_energy/ren_solar.webp" alt="Smart Solar Energy" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -256,7 +140,7 @@ const RenewableEnergy = () => {
               </div>
               <div className="col-lg-6 order-1 order-lg-2">
                 <div className="solar-image-wrapper">
-                  <img src="/assets/img/renewable_energy/solar_problem.png" alt="Solar Farm Issue Tracking" />
+                  <img src="/assets/img/renewable_energy/solar_problem.webp" alt="Solar Farm Issue Tracking" />
                   <div className="solar-overlay-card d-none d-md-block">
                     <h6 style={{ color: '#c0001a', fontSize: '14px', fontWeight: '800', margin: '0 0 5px 0' }}>ROI DELAYED</h6>
                     <p style={{ margin: 0, fontSize: '12px', color: '#4a5568', fontWeight: '600' }}>Traditional string-level monitoring misses critical panel faults.</p>
@@ -269,7 +153,7 @@ const RenewableEnergy = () => {
             <div className="row g-5 align-items-center mb-4" style={{ padding: '30px 0', borderTop: '1px solid #e2e8f0' }}>
               <div className="col-lg-5">
                 <div className="solar-image-wrapper">
-                  <img src="/assets/img/renewable_energy/solar_scada.png" alt="Smart SCADA Dashboard" />
+                  <img src="/assets/img/renewable_energy/solar_scada.webp" alt="Smart SCADA Dashboard" />
                   <div className="solar-overlay-card d-none d-md-block" style={{ right: 'auto', left: '20px', borderLeft: 'none', borderRight: '4px solid #1a2a4a' }}>
                     <h6 style={{ color: '#1a2a4a', fontSize: '14px', fontWeight: '800', margin: '0 0 5px 0' }}>PANEL-LEVEL TRACKING</h6>
                     <p style={{ margin: 0, fontSize: '12px', color: '#4a5568', fontWeight: '600' }}>Pinpoint exact failures instantly.</p>

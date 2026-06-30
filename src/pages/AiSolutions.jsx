@@ -1,3 +1,4 @@
+import PageBreadcrumb from '../components/PageBreadcrumb';
 import React, { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -29,140 +30,10 @@ const AiSolutions = () => {
 
   return (
     <>
-      <style>
-        {`
-          .industrial-grid {
-            background-image: 
-              linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
-          }
-          .caution-stripe {
-            position: relative;
-            overflow: hidden;
-          }
-          
-          /* Staggered Hero Animations */
-          @keyframes fadeUpAnim {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-          .swiper-slide-active .hero-tag { animation: fadeUpAnim 0.6s ease forwards 0.2s; opacity: 0; }
-          .swiper-slide-active h1 { animation: fadeUpAnim 0.6s ease forwards 0.4s; opacity: 0; }
-          .swiper-slide-active p { animation: fadeUpAnim 0.6s ease forwards 0.6s; opacity: 0; }
-          .swiper-slide-active .hero-mini-features { animation: fadeUpAnim 0.6s ease forwards 0.8s; opacity: 0; }
-          .swiper-slide-active .hero-buttons { animation: fadeUpAnim 0.6s ease forwards 1.0s; opacity: 0; }
-
-          .msl-bg-navy { background-color: #1a2a4a; }
-          .msl-bg-gray { background-color: #f8fafc; }
-          .msl-navy { color: #1a2a4a; }
-          .msl-crimson { color: #c0001a; }
-          .msl-text-body { color: #4a5568; }
-
-          /* Override gradients from global CSS */
-          .hero-text h1 span.msl-solid-highlight {
-            background: none !important;
-            -webkit-text-fill-color: initial !important;
-            color: #c0001a !important;
-          }
-          
-          .ai-feature-card {
-            background: #fff;
-            padding: 30px 25px;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-          }
-          .ai-feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-          }
-          .ai-tag {
-            background: rgba(192,0,26,0.1);
-            color: #c0001a;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            display: inline-block;
-            margin-top: 20px;
-          }
-          .breadcrumb-link {
-            color: #a0aec0;
-            text-decoration: none;
-            transition: color 0.2s;
-          }
-          .breadcrumb-link:hover {
-            color: #ffffff;
-          }
-          
-          /* Red Hover Effects (Matches Defense.jsx) */
-          .ai-feature-card-hover {
-            transition: all 0.3s ease;
-          }
-          .ai-feature-card-hover:hover {
-            background: #ffffff !important;
-            border-color: #e2e8f0 !important;
-            transform: translateY(-5px) !important;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05) !important;
-          }
-          .ai-icon-box {
-            transition: all 0.3s ease;
-            border-radius: 12px;
-          }
-          i.ai-icon-box {
-            padding: 8px;
-            margin: -8px;
-          }
-          .ai-feature-card-hover:hover .ai-icon-box {
-            background: rgba(192, 0, 26, 0.1) !important;
-            transform: scale(1.05);
-          }
-          .ai-feature-card-hover:hover .ai-icon-box i {
-            color: #c0001a !important;
-          }
-          .ai-title {
-            transition: color 0.3s ease;
-          }
-          .ai-feature-card-hover:hover .ai-title {
-            color: #c0001a !important;
-          }
-          
-          /* Dark Navy Alternating Box */
-          .msl-dark-navy-box {
-            background: linear-gradient(135deg, #2b4c80 0%, #1a2a4a 100%) !important;
-            color: #ffffff !important;
-            border: none !important;
-            box-shadow: 0 10px 30px rgba(26,42,74,0.15) !important;
-          }
-          .msl-dark-navy-box p, .msl-dark-navy-box li {
-            color: #cbd5e1 !important;
-          }
-          .msl-dark-navy-box h4, .msl-dark-navy-box h5 {
-            color: #ffffff !important;
-          }
-          .msl-dark-navy-box i {
-            color: #c0001a !important;
-          }
-        `}
-      </style>
-
       {/* Breadcrumb */}
-      <div style={{ background: '#1a2a4a', paddingTop: '75px', paddingBottom: '15px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div className="container">
-          <span style={{ color: '#a0aec0', fontSize: '13px', fontFamily: 'Inter, sans-serif' }}>
-            <Link to="/" className="breadcrumb-link">Home</Link> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span>Products</span> <span style={{ margin: '0 8px' }}>&gt;</span> 
-            <span style={{ color: '#ffffff', fontWeight: '500' }}>AI Solutions</span>
-          </span>
-        </div>
-      </div>
+      <PageBreadcrumb productName="AI Solutions" />
 
-      {/* Hero Slider */}
+{/* Hero Slider */}
       <section id="hero-slider" className="heroSwiper msl-bg-navy industrial-grid" style={{ paddingTop: '60px', paddingBottom: '60px' }}>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -199,7 +70,7 @@ const AiSolutions = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/ai/ai_surv.png" alt="High Security Surveillance" />
+                          <img src="/assets/img/ai/ai_surv.webp" alt="High Security Surveillance" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -236,7 +107,7 @@ const AiSolutions = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/ai/ai_traffic_2.png" alt="High Traffic Signaling" />
+                          <img src="/assets/img/ai/ai_traffic_2.webp" alt="High Traffic Signaling" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -273,7 +144,7 @@ const AiSolutions = () => {
                       </div>
                       <div className="image-col">
                         <div className="image-panel">
-                          <img src="/assets/img/defense/ai_tender_2.png" alt="Tender / Bidding Automation" />
+                          <img src="/assets/img/defense/ai_tender_2.webp" alt="Tender / Bidding Automation" />
                         </div>
                         <div className="spec-chip">
                           <div className="spec-label">Key Differentiator</div>
@@ -362,7 +233,7 @@ const AiSolutions = () => {
                   {/* Right Column: Image */}
                   <div className="col-lg-6 text-center" style={{ position: 'relative' }}>
                      <div style={{ position: 'relative', zIndex: 1, padding: '10px', background: '#f8fafc', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 15px 35px rgba(0,0,0,0.05)', transition: 'all 0.5s ease' }} onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 25px 45px rgba(0,0,0,0.08)'; }} onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 15px 35px rgba(0,0,0,0.05)'; }}>
-                       <img src="/assets/img/ai/ai_surveillance.png" alt="AI Surveillance System" style={{ width: '100%', borderRadius: '16px', display: 'block' }} />
+                       <img src="/assets/img/ai/ai_surveillance.webp" alt="AI Surveillance System" style={{ width: '100%', borderRadius: '16px', display: 'block' }} />
                        {/* Subtle animated corners */}
                        <div style={{ position: 'absolute', top: '0', left: '0', width: '20px', height: '20px', borderTop: '2px solid #c0001a', borderLeft: '2px solid #c0001a', borderRadius: '24px 0 0 0' }}></div>
                        <div style={{ position: 'absolute', bottom: '0', right: '0', width: '20px', height: '20px', borderBottom: '2px solid #c0001a', borderRight: '2px solid #c0001a', borderRadius: '0 0 24px 0' }}></div>
@@ -510,7 +381,7 @@ const AiSolutions = () => {
                   {/* Image occupying ~5/8 space (col-lg-7) */}
                   <div className="col-lg-7">
                     <div style={{ position: 'relative', padding: '10px', background: '#f8fafc', borderRadius: '24px', border: '1px solid #e2e8f0', boxShadow: '0 15px 35px rgba(0,0,0,0.05)', transition: 'all 0.5s ease' }} className="hover-scale">
-                      <img src="/assets/img/ai/ai_traffic.png" alt="AI Traffic Detection Screenshot" style={{ width: '100%', borderRadius: '16px', display: 'block' }} />
+                      <img src="/assets/img/ai/ai_traffic.webp" alt="AI Traffic Detection Screenshot" style={{ width: '100%', borderRadius: '16px', display: 'block' }} />
                       {/* Text overlay removed as requested */}
                     </div>
                   </div>
@@ -744,7 +615,7 @@ const AiSolutions = () => {
                   {/* Image occupying right space ~5/8 (col-lg-7) */}
                   <div className="col-lg-7">
                     <div style={{ position: 'relative', transition: 'all 0.5s ease' }} className="hover-scale">
-                      <img src="/assets/img/defense/ai_tender.png" alt="AI Tender Processing Pipeline" style={{ width: '100%', borderRadius: '16px', display: 'block', boxShadow: '0 15px 40px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }} />
+                      <img src="/assets/img/defense/ai_tender.webp" alt="AI Tender Processing Pipeline" style={{ width: '100%', borderRadius: '16px', display: 'block', boxShadow: '0 15px 40px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }} />
                     </div>
                   </div>
                 </div>

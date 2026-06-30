@@ -84,7 +84,7 @@ const SafeLoadAntiLeakage = () => {
               <div className="row g-0">
                 {/* Left Column - Image */}
                 <div className="col-lg-6" style={{ minHeight: '400px' }}>
-                  <img src="/assets/img/manufacturing_automations/safeload_dashboard.png" alt="SafeLoad Central Dashboard" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src="/assets/img/manufacturing_automations/safeload_dashboard.webp" alt="SafeLoad Central Dashboard" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 
                 {/* Right Column - Content */}
@@ -184,7 +184,7 @@ const SafeLoadAntiLeakage = () => {
             {/* Haul Roads Section */}
             <div className="row mb-5 align-items-center" style={{ background: '#1a2a4a', borderRadius: '24px', overflow: 'hidden' }}>
               <div className="col-lg-6 p-0">
-                <img src="/assets/img/manufacturing_automations/mining_emergency_response.png" alt="Mining Emergency Response" style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '350px' }} />
+                <img src="/assets/img/manufacturing_automations/mining_emergency_response.webp" alt="Mining Emergency Response" style={{ width: '100%', height: '100%', objectFit: 'cover', minHeight: '350px' }} />
               </div>
               <div className="col-lg-6">
                  <div style={{ padding: '40px 50px' }}>
@@ -236,7 +236,7 @@ const SafeLoadAntiLeakage = () => {
                 </div>
               </div>
               <div className="col-lg-6 order-1 order-lg-2">
-                <img src="/assets/img/manufacturing_automations/truck_fleet_optimization.png" alt="Fleet Productivity & Truck Optimization" style={{ width: '100%', height: 'auto', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }} />
+                <img src="/assets/img/manufacturing_automations/truck_fleet_optimization.webp" alt="Fleet Productivity & Truck Optimization" style={{ width: '100%', height: 'auto', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.08)', border: '1px solid #e2e8f0' }} />
               </div>
             </div>
 
