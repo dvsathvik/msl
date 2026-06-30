@@ -26,7 +26,8 @@ const Contact = () => {
     submitData.append("name", formData.name);
     submitData.append("email", formData.email);
     submitData.append("phone", formData.phone);
-    submitData.append("subject", formData.subject);
+    submitData.append("subject", `New Inquiry: ${formData.subject || 'Website Contact'}`); // Email Subject Line
+    submitData.append("Inquiry Subject", formData.subject); // Shows in the email body table
     submitData.append("message", formData.message);
 
     try {

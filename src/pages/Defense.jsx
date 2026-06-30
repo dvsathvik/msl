@@ -75,7 +75,7 @@ const Defense = () => {
                     <div className="card-grid">
                       <div className="text-col">
                         <span className="tag">DEFENSE &bull; AUTOMATION</span>
-                        <h1>T90's Vehicles2Vehicles<br/><span>RF Comm.</span></h1>
+                        <h1>T90's V2V<br/><span>RF Comm.</span></h1>
                         <p className="subtext">Secured Convoy Vehicles Comm. & Automation</p>
                         <div className="cap-grid">
                           <div className="cap-item"><span className="cap-icon"><i className="bx bx-wifi"></i></span><span className="cap-label">Wireless Tech</span></div>
@@ -112,7 +112,7 @@ const Defense = () => {
                     <div className="card-grid">
                       <div className="text-col">
                         <span className="tag">AEROSPACE &bull; AVIONICS</span>
-                        <h1>G3000 Cockpit<br/><span>Monitor Device</span></h1>
+                        <h1>Flight control<br/><span>Monitor Device</span></h1>
                         <p className="subtext">High Precision Monitoring for Modern Avionics</p>
                         <div className="cap-grid">
                           <div className="cap-item"><span className="cap-icon"><i className="bx bx-chip"></i></span><span className="cap-label">Embedded SW</span></div>
@@ -149,7 +149,7 @@ const Defense = () => {
                     <div className="card-grid">
                       <div className="text-col">
                         <span className="tag">DEFENSE &bull; SECURITY</span>
-                        <h1>SMART AI<br/><span>Locker Systems</span></h1>
+                        <h1>Smart AI<br/><span>locker</span></h1>
                         <p className="subtext">AI-driven secure storage for strategic defense facilities</p>
                         <div className="cap-grid">
                           <div className="cap-item"><span className="cap-icon"><i className="bx bx-scan"></i></span><span className="cap-label">Face ID</span></div>
@@ -186,7 +186,7 @@ const Defense = () => {
                     <div className="card-grid">
                       <div className="text-col">
                         <span className="tag">MILITARY &bull; COMMUNICATIONS</span>
-                        <h1>High Secured Video <br/>& <span>Voice Streaming</span></h1>
+                        <h1>Secure Handheld <br/><span>Communicator</span></h1>
                         <p className="subtext">Encrypted media streaming for Mining & Military Operations</p>
                         <div className="cap-grid">
                           <div className="cap-item"><span className="cap-icon"><i className="bx bx-lock"></i></span><span className="cap-label">Encryption</span></div>
@@ -305,7 +305,7 @@ const Defense = () => {
       <main id="main" className="msl-bg-gray">
         
         {/* =========================================
-            PRODUCT 1: T90 Vehicles2Vehicles RF Comm.
+            PRODUCT 1: T90 V2V RF Comm.
         ========================================= */}
         <section id="t90" ref={t90Ref} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
           
@@ -315,7 +315,7 @@ const Defense = () => {
                 Product 01
               </span>
               <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
-                T90's Vehicles2Vehicles RF Comm. & Automation
+                T90's V2V RF Comm. & Automation
               </h2>
               <p style={{ color: '#cbd5e1', fontSize: '18px', maxWidth: '800px', margin: '0 auto', fontWeight: '300' }}>
                 <strong style={{color: '#fff', fontWeight: '600'}}>Secured Convoy Vehicles Communication.</strong><br/>
@@ -506,7 +506,7 @@ const Defense = () => {
         </section>
 
         {/* =========================================
-            PRODUCT 2: G3000 Cockpit Monitor
+            PRODUCT 2: Flight control Monitor
         ========================================= */}
         <section id="g3000" ref={g3000Ref} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
           
@@ -516,7 +516,7 @@ const Defense = () => {
                 Product 02
               </span>
               <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
-                G3000 Cockpit Monitor Device
+                Flight control Monitor Device
               </h2>
               <p style={{ color: '#cbd5e1', fontSize: '18px', maxWidth: '800px', margin: '0 auto', fontWeight: '300' }}>
                 <strong style={{color: '#fff', fontWeight: '600'}}>High Precision Monitoring for Avionics.</strong><br/>
@@ -540,7 +540,7 @@ const Defense = () => {
                       Uncompromising Avionics Precision. <span style={{ color: '#C0001A' }}>Zero Room For Error.</span>
                     </h3>
                     <p style={{ fontSize: '15px', lineHeight: '1.7', marginBottom: '30px', color: '#4a5568' }}>
-                      The <strong>G3000 Cockpit Monitor</strong> processes thousands of data points instantly. It acts as the central visualization platform, providing pilots with critical, real-time flight metrics and aircraft health data to ensure absolute situational awareness.
+                      The <strong>Flight control Monitor Device</strong> processes thousands of data points instantly. It acts as the central visualization platform, providing pilots with critical, real-time flight metrics and aircraft health data to ensure absolute situational awareness.
                     </p>
 
                     {/* Subtle Challenges Section */}
@@ -678,7 +678,7 @@ const Defense = () => {
         </section>
 
         {/* =========================================
-            PRODUCT 3: SMART AI Locker Systems
+            PRODUCT 3: Smart AI locker
         ========================================= */}
         <section id="locker" ref={lockerRef} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
           
@@ -688,7 +688,7 @@ const Defense = () => {
                 Product 03
               </span>
               <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
-                SMART AI Locker Systems For Defence
+                Smart AI locker For Defence
               </h2>
               <p style={{ color: '#cbd5e1', fontSize: '18px', maxWidth: '800px', margin: '0 auto', fontWeight: '300' }}>
                 <strong style={{color: '#fff', fontWeight: '600'}}>Impenetrable Asset Storage.</strong><br/>
@@ -943,7 +943,7 @@ const Defense = () => {
 
 
         {/* =========================================
-            PRODUCT 4: Video and Voice Streaming
+            PRODUCT 4: Secure Handheld Communicator
         ========================================= */}
         <section id="video" ref={videoRef} style={{ background: '#f8fafc', paddingBottom: '60px' }}>
           
@@ -953,7 +953,7 @@ const Defense = () => {
                 Product 04
               </span>
               <h2 style={{ color: '#fff', fontSize: '36px', fontWeight: '800', marginBottom: '15px' }}>
-                High-Secured Video & Voice Streaming
+                Secure Handheld Communicator
               </h2>
               <p style={{ color: '#cbd5e1', fontSize: '18px', maxWidth: '800px', margin: '0 auto', fontWeight: '300' }}>
                 <strong style={{color: '#fff', fontWeight: '600'}}>Unbreakable Comms. Unstoppable Missions.</strong><br/>

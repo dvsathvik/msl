@@ -39,10 +39,10 @@ const Header = () => {
               <Link to="/products/defense">Defense</Link>
               <div className="nav-dropdown-menu">
 
-                <Link to="/products/defense/t90"><i className="bi bi-broadcast"></i> T90’s Vehicles2Vehicles RF Comm. & Automation</Link>
-                <Link to="/products/defense/g3000"><i className="bi bi-airplane"></i> G3000 Cockpit Monitor Device in Avionics</Link>
-                <Link to="/products/defense/locker"><i className="bi bi-safe"></i> SMART AI Locker Systems For Defence</Link>
-                <Link to="/products/defense/video"><i className="bi bi-camera-reels"></i> High Secured Video and Voice Streaming</Link>
+                <Link to="/products/defense/t90"><i className="bi bi-broadcast"></i> T90’s V2V RF Comm. & Automation</Link>
+                <Link to="/products/defense/g3000"><i className="bi bi-airplane"></i> Flight control Monitor Device</Link>
+                <Link to="/products/defense/locker"><i className="bi bi-safe"></i> Smart AI locker</Link>
+                <Link to="/products/defense/video"><i className="bi bi-camera-reels"></i> Secure Handheld Communicator</Link>
                 <Link to="/products/defense/soc-modernization"><i className="bi bi-cpu"></i> Legacy to Latest SOC Modernization</Link>
                 <Link to="/products/defense/ai-security"><i className="bi bi-shield-lock"></i> AI Secured Zones Monitoring System</Link>
               </div>
